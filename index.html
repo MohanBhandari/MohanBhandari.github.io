@@ -3,9 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - GitHub Pages</title>
+    <title>Mohan Bhandari - Academic CV</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* Light Blue Theme Variables */
+        :root {
+            --primary-blue: #3498db;
+            --light-blue: #e7f2fa;
+            --medium-blue: #a8d5ff;
+            --dark-blue: #2980b9;
+            --text-dark: #2c3e50;
+            --text-light: #7f8c8d;
+            --background: #f9fdff;
+            --section-bg: #ffffff;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
         /* Global Styles */
         * {
             margin: 0;
@@ -14,23 +27,10 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
-        :root {
-            --primary: #6e5494;
-            --secondary: #4078c0;
-            --accent: #bd2c00;
-            --light: #f5f5f5;
-            --dark: #333;
-            --gray: #767676;
-        }
-        
-        html {
-            scroll-behavior: smooth;
-        }
-        
         body {
+            background-color: var(--background);
+            color: var(--text-dark);
             line-height: 1.6;
-            color: var(--dark);
-            background-color: var(--light);
         }
         
         .container {
@@ -40,185 +40,186 @@
         }
         
         section {
-            padding: 80px 0;
+            padding: 40px 0;
         }
         
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background-color: var(--primary);
-            color: white;
+        h1, h2, h3, h4 {
+            color: var(--dark-blue);
+            margin-bottom: 20px;
+        }
+        
+        a {
+            color: var(--primary-blue);
             text-decoration: none;
-            border-radius: 5px;
-            font-weight: 600;
-            transition: all 0.3s ease;
+            transition: color 0.3s ease;
         }
         
-        .btn:hover {
-            background-color: var(--secondary);
-            transform: translateY(-3px);
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-            font-size: 2.5rem;
-            color: var(--primary);
+        a:hover {
+            color: var(--dark-blue);
+            text-decoration: underline;
         }
         
         /* Header Styles */
         header {
-            background-color: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-        
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-        }
-        
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--primary);
-            text-decoration: none;
-        }
-        
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-        
-        .nav-links li {
-            margin-left: 30px;
-        }
-        
-        .nav-links a {
-            text-decoration: none;
-            color: var(--dark);
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-        
-        .nav-links a:hover {
-            color: var(--primary);
-        }
-        
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            margin-top: 70px;
-        }
-        
-        .hero-content {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
+            color: white;
+            padding: 40px 0;
             text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
         }
         
-        .hero h1 {
-            font-size: 3.5rem;
+        .profile-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: var(--shadow);
             margin-bottom: 20px;
-            color: var(--dark);
         }
         
-        .hero p {
+        .profile-title {
             font-size: 1.2rem;
-            margin-bottom: 30px;
-            color: var(--gray);
+            font-weight: 300;
+            margin-top: 10px;
+        }
+        
+        /* Navigation */
+        nav {
+            background-color: white;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: center;
+        }
+        
+        .nav-link {
+            padding: 15px 20px;
+            display: inline-block;
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary-blue);
+            text-decoration: none;
+        }
+        
+        /* Section Styles */
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--primary-blue);
+            margin: 10px auto;
+            border-radius: 2px;
+        }
+        
+        .card {
+            background-color: var(--section-bg);
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow);
+            border-left: 4px solid var(--primary-blue);
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            transition: transform 0.3s ease;
         }
         
         /* About Section */
         .about-content {
             display: flex;
-            align-items: center;
-            gap: 50px;
+            flex-wrap: wrap;
+            gap: 30px;
         }
         
         .about-text {
             flex: 1;
+            min-width: 300px;
         }
         
-        .about-image {
+        .contact-info {
             flex: 1;
-            text-align: center;
+            min-width: 300px;
+            background-color: var(--light-blue);
+            padding: 20px;
+            border-radius: 8px;
         }
         
-        .about-image img {
-            max-width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
         }
         
-        /* Projects Section */
-        .projects {
-            background-color: #f9f9f9;
-        }
-        
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .project-card {
-            background-color: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-        
-        .project-card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .project-img {
-            height: 200px;
-            background-color: var(--primary);
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-blue);
+            color: white;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
-            font-size: 2rem;
+            margin-right: 15px;
         }
         
-        .project-content {
-            padding: 20px;
+        /* Publications */
+        .pub-item {
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
         }
         
-        .project-content h3 {
-            margin-bottom: 10px;
-            color: var(--primary);
+        .pub-title {
+            font-weight: 600;
+            color: var(--dark-blue);
+            margin-bottom: 5px;
         }
         
-        /* Skills Section */
+        .pub-authors {
+            font-style: italic;
+            margin-bottom: 5px;
+            color: var(--text-light);
+        }
+        
+        .pub-doi {
+            font-size: 0.9rem;
+        }
+        
+        /* Skills */
         .skills-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
         }
         
         .skill-category {
-            background-color: white;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-        
-        .skill-category h3 {
-            color: var(--primary);
-            margin-bottom: 20px;
-            text-align: center;
+            flex: 1;
+            min-width: 250px;
+            background-color: var(--light-blue);
+            padding: 20px;
+            border-radius: 8px;
         }
         
         .skill-item {
@@ -226,356 +227,398 @@
         }
         
         .skill-name {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 5px;
-        }
-        
-        .skill-bar {
-            height: 10px;
-            background-color: #e9e9e9;
-            border-radius: 5px;
-        }
-        
-        .skill-level {
-            height: 100%;
-            background-color: var(--secondary);
-            border-radius: 5px;
-        }
-        
-        /* Contact Section */
-        .contact {
-            background-color: #f9f9f9;
-        }
-        
-        .contact-container {
-            display: flex;
-            gap: 50px;
-        }
-        
-        .contact-info {
-            flex: 1;
-        }
-        
-        .contact-form {
-            flex: 1;
-        }
-        
-        .info-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-        
-        .info-item i {
-            font-size: 1.5rem;
-            color: var(--primary);
-            margin-right: 15px;
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        .form-group label {
-            display: block;
             margin-bottom: 5px;
             font-weight: 500;
         }
         
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 1rem;
+        .skill-bar {
+            height: 8px;
+            background-color: #e0e0e0;
+            border-radius: 4px;
+            overflow: hidden;
         }
         
-        .form-group textarea {
-            height: 150px;
-            resize: vertical;
+        .skill-level {
+            height: 100%;
+            background-color: var(--primary-blue);
+            border-radius: 4px;
+        }
+        
+        /* Timeline */
+        .timeline-item {
+            padding: 20px;
+            margin-bottom: 20px;
+            background-color: var(--section-bg);
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            position: relative;
+            border-left: 4px solid var(--primary-blue);
+        }
+        
+        .timeline-date {
+            font-weight: 600;
+            color: var(--primary-blue);
+            margin-bottom: 10px;
         }
         
         /* Footer */
         footer {
-            background-color: var(--dark);
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
             color: white;
-            padding: 40px 0;
             text-align: center;
+            padding: 30px 0;
+            margin-top: 40px;
         }
         
         .social-links {
             margin-bottom: 20px;
         }
         
-        .social-links a {
-            color: white;
-            font-size: 1.5rem;
+        .social-link {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: white;
+            color: var(--primary-blue);
+            border-radius: 50%;
+            line-height: 40px;
             margin: 0 10px;
-            transition: color 0.3s ease;
+            transition: all 0.3s ease;
         }
         
-        .social-links a:hover {
-            color: var(--secondary);
+        .social-link:hover {
+            transform: translateY(-5px);
+            color: var(--dark-blue);
         }
         
         /* Responsive Design */
         @media (max-width: 768px) {
-            .about-content,
-            .contact-container {
+            .about-content {
                 flex-direction: column;
             }
             
-            .hero h1 {
-                font-size: 2.5rem;
+            .profile-img {
+                width: 150px;
+                height: 150px;
             }
             
-            .nav-links {
-                display: none;
+            .nav-container {
+                flex-wrap: wrap;
+            }
+            
+            .nav-link {
+                padding: 10px 15px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
+    <!-- Header Section -->
     <header>
         <div class="container">
-            <nav>
-                <a href="#" class="logo">YourName</a>
-                <ul class="nav-links">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
+            <div class="profile-container">
+                <img src="https://placehold.co/180x180/3498db/FFFFFF?text=MB" alt="Mohan Bhandari" class="profile-img">
+                <h1>Mohan Bhandari</h1>
+                <p class="profile-title">PhD Scholar in Medical Image Processing | AI Researcher</p>
+            </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
+    <!-- Navigation -->
+    <nav>
         <div class="container">
-            <div class="hero-content">
-                <h1>Hello, I'm <span style="color: var(--primary);">Your Name</span></h1>
-                <p>I'm a passionate developer creating amazing web experiences. Welcome to my GitHub Pages site!</p>
-                <a href="#projects" class="btn">View My Work</a>
+            <div class="nav-container">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#education" class="nav-link">Education</a>
+                <a href="#publications" class="nav-link">Publications</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#awards" class="nav-link">Awards</a>
+                <a href="#contact" class="nav-link">Contact</a>
             </div>
         </div>
-    </section>
+    </nav>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
+    <!-- Main Content -->
+    <main class="container">
+        <!-- About Section -->
+        <section id="about">
             <h2 class="section-title">About Me</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>Hello! I'm a web developer with a passion for creating beautiful, functional websites and applications. I enjoy turning complex problems into simple, intuitive solutions.</p>
-                    <p>When I'm not coding, you can find me hiking, reading, or experimenting with new technologies. I believe in continuous learning and always strive to improve my skills.</p>
-                    <p>This website serves as a portfolio of my work and a way to share my knowledge with others. Feel free to explore and get in touch if you'd like to collaborate!</p>
-                    <a href="#" class="btn">Download Resume</a>
+                    <p>I am a PhD Scholar at Sirindhorn International Institute of Technology, Thammasat University, Thailand, specializing in Medical Image Processing. My research focuses on Multi-Scale Artificial Life for Segmentation of Medical Images.</p>
+                    <p>As an Artificial Intelligence enthusiast and machine learning developer, I have sound knowledge of machine learning algorithms, probability, and explainable AI. I have collaborated with researchers from Harvard University, University of Tennessee, University of Texas, Ulster University, and other institutions worldwide.</p>
+                    <p>I have several years of experience lecturing in programming-related subjects like AI, ML, image processing, data mining, data science, data structure, C, C++, and DBMS at various colleges in Nepal.</p>
                 </div>
-                <div class="about-image">
-                    <img src="https://via.placeholder.com/400x400" alt="Profile Image">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2 class="section-title">My Projects</h2>
-            <div class="project-grid">
-                <div class="project-card">
-                    <div class="project-img">
-                        <i class="fas fa-project-diagram"></i>
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <div>Email</div>
+                            <a href="mailto:mail2mohanbhandari@gmail.com">mail2mohanbhandari@gmail.com</a>
+                        </div>
                     </div>
-                    <div class="project-content">
-                        <h3>Project One</h3>
-                        <p>A web application built with JavaScript that helps users organize their tasks efficiently.</p>
-                        <a href="#" class="btn">View Project</a>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <div>Address</div>
+                            <div>Bangkadi, PathumThani, Thailand</div>
+                        </div>
                     </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-img">
-                        <i class="fas fa-chart-line"></i>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div>
+                            <div>Status</div>
+                            <div>PhD Student, SIIT, Thammasat University</div>
+                        </div>
                     </div>
-                    <div class="project-content">
-                        <h3>Data Visualization</h3>
-                        <p>An interactive data visualization tool that displays complex datasets in an understandable way.</p>
-                        <a href="#" class="btn">View Project</a>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-img">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3>Mobile App</h3>
-                        <p>A cross-platform mobile application developed with React Native for fitness tracking.</p>
-                        <a href="#" class="btn">View Project</a>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div>
+                            <div>Nationality</div>
+                            <div>Nepalese</div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
-        <div class="container">
-            <h2 class="section-title">My Skills</h2>
+        <!-- Education Section -->
+        <section id="education">
+            <h2 class="section-title">Education</h2>
+            <div class="timeline-item">
+                <div class="timeline-date">2024 - Present</div>
+                <h3>PhD in Medical Image Processing</h3>
+                <p>Sirindhorn International Institute of Technology, Thammasat University, Thailand</p>
+                <p>Dissertation Topic: Multi-Scale Artificial Life for Segmentation of Medical Images</p>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2017 - 2019</div>
+                <h3>ME Computer</h3>
+                <p>Nepal College of Information Technology, Pokhara University</p>
+                <p>Dissertation: Performance Analysis of Adam Optimization on Introducing Energy Index</p>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2007 - 2011</div>
+                <h3>BE Computer</h3>
+                <p>Pokhara Engineering College, Pokhara University</p>
+                <p>Major Project: Video On Demand - "Sending SMS to IVR system to play the requested video"</p>
+            </div>
+        </section>
+
+        <!-- Publications Section -->
+        <section id="publications">
+            <h2 class="section-title">Selected Publications</h2>
+            <div class="pub-item">
+                <div class="pub-title">Interpreting decisions of lightweight CNN for glitch classification in time frequency images: Enhancing black-hole merger detection in O1 and O2 runs</div>
+                <div class="pub-authors">Mohan Bhandari*, Aakash Thapa, Loknath Regmi, Suman Sharma, Prakash Paudel, Sanjeeb Prasad Panday</div>
+                <div class="pub-doi"><strong>Physics of the Dark Universe</strong> (2025) | <a href="https://doi.org/10.1016/j.dark.2025.101914" target="_blank">DOI: 10.1016/j.dark.2025.101914</a></div>
+            </div>
+            <div class="pub-item">
+                <div class="pub-title">Explanation-Driven HCI Model to Examine the Mini-Mental State for Alzheimer's Disease</div>
+                <div class="pub-authors">Loveleen Gaur, Mohan Bhandari, Bhadwal Singh Shikhar, Jhanjhi NZ, Mohammad Shorfuzzaman, Mehedi Masud</div>
+                <div class="pub-doi"><strong>ACM Transactions TMCCA</strong> (2023) | <a href="https://doi.org/10.1145/3527174" target="_blank">DOI: 10.1145/3527174</a> | Q1 with IF 5.2</div>
+            </div>
+            <div class="pub-item">
+                <div class="pub-title">Robust Light Weight Deep Learning Model to Augur Deep Features of Renal Abnormalities: Cyst, Stone and Tumor</div>
+                <div class="pub-authors">Mohan Bhandari, Pratheepan Yogarajah, Muthu Kavitha, Joan Condell</div>
+                <div class="pub-doi"><strong>Applied Sciences</strong> (2023) | <a href="https://doi.org/10.3390/app13053125" target="_blank">DOI: 10.3390/app13053125</a> | Q2 with IF 2.5</div>
+            </div>
+            <div class="pub-item">
+                <div class="pub-title">Explanatory classification of CXR images into COVID-19, Pneumonia and Tuberculosis using deep learning and XAI</div>
+                <div class="pub-authors">Mohan Bhandari, Tej Bahadur Shahi, Birat Siku, and Arjun Neupane</div>
+                <div class="pub-doi"><strong>Computers in Biology and Medicine</strong> (2022) | <a href="https://doi.org/10.1016/j.compbiomed.2022.106156" target="_blank">DOI: 10.1016/j.compbiomed.2022.106156</a> | Q1 with IF 7</div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience">
+            <h2 class="section-title">Professional Experience</h2>
+            <div class="timeline-item">
+                <div class="timeline-date">Sep 2015 – Dec 2023</div>
+                <h3>Senior Lecturer | Research Committee Member</h3>
+                <p><strong>Samriddhi College, Lokanthali, Bhaktapur, Nepal</strong></p>
+                <p>Lectured on programming, artificial intelligence, and image processing. Motivated and helped students adapt to research activities.</p>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">Jun 2021 – Dec 2023</div>
+                <h3>Adjunct Faculty</h3>
+                <p><strong>Phoenix College of Management, Maitidevi, Kathmandu, Nepal</strong></p>
+                <p>Lectured on "Data Warehousing and Data Mining" and mentored students on their thesis work as a supervisor.</p>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">April 2012 – July 2015</div>
+                <h3>Head of Department</h3>
+                <p><strong>Morning Star Higher Secondary School, Dhikurpokhari, Nepal</strong></p>
+                <p>Tutored Computer Science for secondary students. Guided and monitored teaching-learning activities within the computer department.</p>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <h2 class="section-title">Skills & Expertise</h2>
             <div class="skills-container">
                 <div class="skill-category">
-                    <h3>Frontend</h3>
+                    <h3><i class="fas fa-code"></i> Programming</h3>
                     <div class="skill-item">
-                        <div class="skill-name">
-                            <span>HTML/CSS</span>
-                            <span>90%</span>
-                        </div>
+                        <div class="skill-name">Python</div>
                         <div class="skill-bar">
                             <div class="skill-level" style="width: 90%;"></div>
                         </div>
                     </div>
                     <div class="skill-item">
-                        <div class="skill-name">
-                            <span>JavaScript</span>
-                            <span>85%</span>
-                        </div>
+                        <div class="skill-name">C#</div>
                         <div class="skill-bar">
                             <div class="skill-level" style="width: 85%;"></div>
                         </div>
                     </div>
                     <div class="skill-item">
-                        <div class="skill-name">
-                            <span>React</span>
-                            <span>80%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-level" style="width: 80%;"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Backend</h3>
-                    <div class="skill-item">
-                        <div class="skill-name">
-                            <span>Node.js</span>
-                            <span>75%</span>
-                        </div>
+                        <div class="skill-name">JavaScript</div>
                         <div class="skill-bar">
                             <div class="skill-level" style="width: 75%;"></div>
                         </div>
                     </div>
-                    <div class="skill-item">
-                        <div class="skill-name">
-                            <span>Python</span>
-                            <span>70%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-level" style="width: 70%;"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-name">
-                            <span>Databases</span>
-                            <span>65%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-level" style="width: 65%;"></div>
-                        </div>
-                    </div>
                 </div>
                 <div class="skill-category">
-                    <h3>Tools</h3>
+                    <h3><i class="fas fa-database"></i> Data & ML</h3>
                     <div class="skill-item">
-                        <div class="skill-name">
-                            <span>Git</span>
-                            <span>85%</span>
-                        </div>
+                        <div class="skill-name">Machine Learning</div>
                         <div class="skill-bar">
-                            <div class="skill-level" style="width: 85%;"></div>
+                            <div class="skill-level" style="width: 95%;"></div>
                         </div>
                     </div>
                     <div class="skill-item">
-                        <div class="skill-name">
-                            <span>VS Code</span>
-                            <span>90%</span>
-                        </div>
+                        <div class="skill-name">Explainable AI</div>
                         <div class="skill-bar">
                             <div class="skill-level" style="width: 90%;"></div>
                         </div>
                     </div>
                     <div class="skill-item">
-                        <div class="skill-name">
-                            <span>Figma</span>
-                            <span>70%</span>
-                        </div>
+                        <div class="skill-name">SQL Databases</div>
                         <div class="skill-bar">
-                            <div class="skill-level" style="width: 70%;"></div>
+                            <div class="skill-level" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-chalkboard-teacher"></i> Teaching</h3>
+                    <div class="skill-item">
+                        <div class="skill-name">AI & ML</div>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 95%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">Image Processing</div>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 90%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">Data Science</div>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 85%;"></div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
+        <!-- Awards Section -->
+        <section id="awards">
+            <h2 class="section-title">Awards & Honors</h2>
+            <div class="card">
+                <h3>Excellent Foreign Scholarship</h3>
+                <p><strong>Sirindhorn International Institute of Technology, Thammasat University</strong> (2024 - Present)</p>
+            </div>
+            <div class="card">
+                <h3>Best Research Paper Award</h3>
+                <p><strong>2nd International Conference on Innovative Practices in Technology and Management</strong> (2022)</p>
+                <p>Paper: Image Steganography Approach Based Ant Colony Optimization With Triangular Chaotic Map</p>
+            </div>
+            <div class="card">
+                <h3>First Position in Software Competition</h3>
+                <p><strong>5th Pokhara Engineering Exhibition</strong> (2011)</p>
+                <p>Project: Video on Demand - Broadcasting requested video automatically based on SMS</p>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
             <h2 class="section-title">Get In Touch</h2>
-            <div class="contact-container">
-                <div class="contact-info">
-                    <div class="info-item">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">
                         <i class="fas fa-envelope"></i>
-                        <span>your.email@example.com</span>
                     </div>
-                    <div class="info-item">
-                        <i class="fas fa-phone"></i>
-                        <span>+1 (123) 456-7890</span>
-                    </div>
-                    <div class="info-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Your Location</span>
-                    </div>
-                    <div class="info-item">
-                        <i class="fab fa-github"></i>
-                        <span>github.com/yourusername</span>
+                    <div>
+                        <div>Email</div>
+                        <a href="mailto:mail2mohanbhandari@gmail.com">mail2mohanbhandari@gmail.com</a>
                     </div>
                 </div>
-                <div class="contact-form">
-                    <form>
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" required></textarea>
-                        </div>
-                        <button type="submit" class="btn">Send Message</button>
-                    </form>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="ai ai-google-scholar"></i>
+                    </div>
+                    <div>
+                        <div>Google Scholar</div>
+                        <a href="https://scholar.google.com/citations?user=yH2GdSQAAAAJ&hl=en&oi=ao" target="_blank">View Profile</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="ai ai-orcid"></i>
+                    </div>
+                    <div>
+                        <div>ORCiD</div>
+                        <a href="https://orcid.org/0000-0003-2551-3163" target="_blank">0000-0003-2551-3163</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <div>
+                        <div>GitHub</div>
+                        <a href="https://github.com/MohanBhandari" target="_blank">github.com/MohanBhandari</a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer>
         <div class="container">
             <div class="social-links">
-                <a href="#"><i class="fab fa-github"></i></a>
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-dev"></i></a>
+                <a href="https://github.com/MohanBhandari" class="social-link" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://scholar.google.com/citations?user=yH2GdSQAAAAJ&hl=en&oi=ao" class="social-link" target="_blank">
+                    <i class="ai ai-google-scholar"></i>
+                </a>
+                <a href="https://orcid.org/0000-0003-2551-3163" class="social-link" target="_blank">
+                    <i class="ai ai-orcid"></i>
+                </a>
+                <a href="https://www.linkedin.com/" class="social-link" target="_blank">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
             </div>
-            <p>&copy; 2023 Your Name. All rights reserved.</p>
+            <p>&copy; 2023 Mohan Bhandari. All rights reserved.</p>
             <p>Hosted on GitHub Pages</p>
         </div>
     </footer>
+
+    <!-- Academicons for academic icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 </body>
 </html>
