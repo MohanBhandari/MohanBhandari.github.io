@@ -4,842 +4,1106 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mohan Bhandari | Academic Profile</title>
-  <meta name="description" content="Academic profile webpage for Mohan Bhandari, PhD Scholar in Medical Image Processing at SIIT, Thammasat University." />
+  <meta name="description" content="Academic profile of Mohan Bhandari, PhD Scholar in Medical Image Processing at SIIT, Thammasat University." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --bg: #0b1020;
-      --bg-soft: #121935;
-      --panel: rgba(255,255,255,0.08);
-      --panel-strong: rgba(255,255,255,0.14);
-      --text: #edf2ff;
-      --muted: #b7c2e4;
-      --accent: #7cc6ff;
-      --accent-2: #8e7dff;
-      --line: rgba(255,255,255,0.12);
-      --success: #8df0c5;
-      --shadow: 0 20px 60px rgba(0,0,0,0.35);
-      --radius: 22px;
-      --max: 1320px;
+    :root{
+      --primary:#2f6fa3;
+      --primary-dark:#1f527c;
+      --secondary:#edf5fb;
+      --accent:#78b7e3;
+      --text:#1e293b;
+      --muted:#64748b;
+      --line:#dbe7f1;
+      --white:#ffffff;
+      --shadow:0 12px 35px rgba(15, 23, 42, 0.08);
+      --radius:18px;
+      --max-width:1180px;
     }
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: var(--text);
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:'Inter', sans-serif;
+      color:var(--text);
+      background:#f8fbfe;
+      line-height:1.7;
+    }
+
+    a{
+      color:var(--primary);
+      text-decoration:none;
+    }
+
+    a:hover{
+      text-decoration:underline;
+    }
+
+    img{
+      max-width:100%;
+      display:block;
+    }
+
+    .container{
+      width:min(calc(100% - 32px), var(--max-width));
+      margin:0 auto;
+    }
+
+    .section{
+      padding:72px 0;
+    }
+
+    .section-title{
+      font-size:2rem;
+      font-weight:800;
+      color:var(--text);
+      text-align:center;
+      margin-bottom:12px;
+      letter-spacing:-0.02em;
+    }
+
+    .section-subtitle{
+      text-align:center;
+      color:var(--muted);
+      max-width:760px;
+      margin:0 auto 40px;
+      font-size:1rem;
+    }
+
+    .card{
+      background:var(--white);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+    }
+
+    /* Header */
+    header{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      background:rgba(255,255,255,0.92);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid rgba(219,231,241,0.9);
+    }
+
+    .nav-wrap{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:20px;
+      min-height:72px;
+    }
+
+    .logo{
+      font-size:1.2rem;
+      font-weight:800;
+      color:var(--primary-dark);
+      letter-spacing:-0.02em;
+    }
+
+    nav ul{
+      display:flex;
+      gap:8px;
+      list-style:none;
+      flex-wrap:wrap;
+    }
+
+    nav a{
+      display:inline-block;
+      padding:10px 14px;
+      border-radius:999px;
+      color:var(--text);
+      font-size:0.94rem;
+      font-weight:500;
+      transition:0.25s ease;
+    }
+
+    nav a:hover{
+      background:var(--secondary);
+      color:var(--primary-dark);
+      text-decoration:none;
+    }
+
+    .menu-toggle{
+      display:none;
+      background:none;
+      border:none;
+      font-size:1.6rem;
+      cursor:pointer;
+      color:var(--primary-dark);
+    }
+
+    /* Hero */
+    .hero{
+      padding:90px 0 72px;
       background:
-        radial-gradient(circle at top left, rgba(124,198,255,0.18), transparent 28%),
-        radial-gradient(circle at top right, rgba(142,125,255,0.18), transparent 32%),
-        linear-gradient(180deg, #0a0f1f 0%, #0b1124 30%, #09101c 100%);
-      line-height: 1.6;
+        linear-gradient(135deg, rgba(237,245,251,1) 0%, rgba(220,236,248,1) 100%);
+      border-bottom:1px solid var(--line);
     }
 
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-
-    .container { width: min(calc(100% - 32px), var(--max)); margin: 0 auto; }
-
-    .topbar {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      backdrop-filter: blur(18px);
-      background: rgba(7, 11, 24, 0.75);
-      border-bottom: 1px solid var(--line);
+    .hero-content{
+      max-width:900px;
+      margin:0 auto;
+      text-align:center;
     }
 
-    .topbar-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      padding: 14px 0;
+    .hero-kicker{
+      display:inline-block;
+      padding:8px 16px;
+      border-radius:999px;
+      background:rgba(47,111,163,0.08);
+      color:var(--primary-dark);
+      border:1px solid rgba(47,111,163,0.15);
+      font-size:0.9rem;
+      font-weight:600;
+      margin-bottom:18px;
     }
 
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-weight: 700;
-      letter-spacing: 0.02em;
+    .hero h1{
+      font-size:clamp(2.6rem, 6vw, 4.8rem);
+      line-height:1.05;
+      font-weight:800;
+      letter-spacing:-0.04em;
+      margin-bottom:18px;
+      color:var(--text);
     }
 
-    .brand-badge {
-      width: 42px;
-      height: 42px;
-      border-radius: 14px;
-      display: grid;
-      place-items: center;
-      background: linear-gradient(135deg, var(--accent), var(--accent-2));
-      color: #07111f;
-      box-shadow: var(--shadow);
-      font-weight: 900;
+    .hero h1 span{
+      color:var(--primary);
     }
 
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      justify-content: flex-end;
+    .hero p{
+      max-width:760px;
+      margin:0 auto 28px;
+      font-size:1.05rem;
+      color:var(--muted);
     }
 
-    nav a {
-      padding: 8px 14px;
-      border-radius: 999px;
-      border: 1px solid transparent;
-      color: var(--muted);
-      font-size: 0.95rem;
+    .hero-actions{
+      display:flex;
+      justify-content:center;
+      flex-wrap:wrap;
+      gap:14px;
+      margin-bottom:28px;
     }
 
-    nav a:hover {
-      color: var(--text);
-      border-color: var(--line);
-      background: rgba(255,255,255,0.05);
-      text-decoration: none;
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:12px 22px;
+      border-radius:12px;
+      font-size:0.95rem;
+      font-weight:600;
+      transition:0.25s ease;
+      border:1px solid transparent;
+      text-decoration:none;
     }
 
-    .hero {
-      padding: 54px 0 30px;
+    .btn-primary{
+      background:var(--primary);
+      color:white;
     }
 
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 320px 1fr;
-      gap: 26px;
-      align-items: stretch;
+    .btn-primary:hover{
+      background:var(--primary-dark);
+      transform:translateY(-2px);
+      text-decoration:none;
     }
 
-    .card {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
+    .btn-secondary{
+      background:white;
+      color:var(--primary);
+      border-color:var(--line);
     }
 
-    .profile-card {
-      padding: 26px;
-      position: relative;
-      overflow: hidden;
+    .btn-secondary:hover{
+      border-color:var(--primary);
+      transform:translateY(-2px);
+      text-decoration:none;
     }
 
-    .profile-card::before,
-    .hero-main::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(140deg, rgba(124,198,255,0.14), transparent 35%, rgba(142,125,255,0.12));
-      pointer-events: none;
+    .hero-meta{
+      display:flex;
+      justify-content:center;
+      flex-wrap:wrap;
+      gap:12px;
+      color:var(--muted);
+      font-size:0.95rem;
     }
 
-    .avatar {
-      width: 100%;
-      aspect-ratio: 1 / 1;
-      border-radius: 26px;
-      background: linear-gradient(135deg, rgba(124,198,255,0.2), rgba(142,125,255,0.18));
-      border: 1px solid var(--line);
-      display: grid;
-      place-items: center;
-      position: relative;
-      overflow: hidden;
-      margin-bottom: 22px;
+    .hero-meta span{
+      background:rgba(255,255,255,0.75);
+      border:1px solid var(--line);
+      padding:8px 14px;
+      border-radius:999px;
     }
 
-    .avatar::after {
-      content: "MB";
-      font-size: clamp(3.4rem, 8vw, 5rem);
-      font-weight: 900;
-      letter-spacing: 0.05em;
-      color: rgba(255,255,255,0.92);
+    /* About */
+    .about-grid{
+      display:grid;
+      grid-template-columns:320px 1fr;
+      gap:24px;
+      align-items:start;
     }
 
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 14px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid var(--line);
-      color: var(--muted);
-      font-size: 0.92rem;
-      margin: 0 8px 10px 0;
+    .profile-card{
+      padding:24px;
+      text-align:center;
+      position:sticky;
+      top:96px;
     }
 
-    .hero-main {
-      position: relative;
-      overflow: hidden;
-      padding: 34px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      min-height: 100%;
+    .avatar{
+      width:140px;
+      height:140px;
+      border-radius:50%;
+      margin:0 auto 18px;
+      background:linear-gradient(135deg, var(--primary), var(--accent));
+      display:grid;
+      place-items:center;
+      color:white;
+      font-size:2.6rem;
+      font-weight:800;
+      letter-spacing:0.04em;
+      box-shadow:0 12px 24px rgba(47,111,163,0.18);
     }
 
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      width: fit-content;
-      padding: 8px 14px;
-      border-radius: 999px;
-      background: rgba(124,198,255,0.12);
-      border: 1px solid rgba(124,198,255,0.2);
-      color: var(--accent);
-      font-size: 0.92rem;
-      margin-bottom: 16px;
-      font-weight: 600;
+    .profile-card h3{
+      font-size:1.3rem;
+      margin-bottom:6px;
     }
 
-    h1 {
-      margin: 0;
-      font-size: clamp(2.2rem, 4vw, 4.4rem);
-      line-height: 1.05;
-      letter-spacing: -0.03em;
+    .profile-card p{
+      color:var(--muted);
+      font-size:0.95rem;
+      margin-bottom:18px;
     }
 
-    .lead {
-      font-size: 1.05rem;
-      color: var(--muted);
-      max-width: 920px;
-      margin: 18px 0 24px;
+    .contact-list{
+      display:grid;
+      gap:12px;
+      text-align:left;
     }
 
-    .quick-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 14px;
-      margin-top: 10px;
+    .contact-item{
+      padding:12px 14px;
+      border:1px solid var(--line);
+      border-radius:14px;
+      background:#fbfdff;
     }
 
-    .stat {
-      padding: 16px;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid var(--line);
+    .contact-item strong{
+      display:block;
+      font-size:0.82rem;
+      text-transform:uppercase;
+      letter-spacing:0.04em;
+      color:var(--primary);
+      margin-bottom:4px;
     }
 
-    .stat strong {
-      display: block;
-      font-size: 1.5rem;
-      line-height: 1.1;
-      margin-bottom: 6px;
+    .about-main{
+      padding:28px;
     }
 
-    .section {
-      padding: 18px 0 10px;
+    .about-main h3{
+      font-size:1.3rem;
+      margin-bottom:12px;
+      color:var(--text);
     }
 
-    .section-header {
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      gap: 18px;
-      margin-bottom: 16px;
+    .about-main p{
+      color:var(--muted);
+      margin-bottom:16px;
     }
 
-    .section-header h2 {
-      margin: 0;
-      font-size: clamp(1.4rem, 2vw, 2rem);
-      letter-spacing: -0.02em;
+    .tags{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:14px;
     }
 
-    .section-header p {
-      margin: 0;
-      color: var(--muted);
-      max-width: 760px;
+    .tag{
+      padding:8px 12px;
+      border-radius:999px;
+      background:var(--secondary);
+      color:var(--primary-dark);
+      font-size:0.88rem;
+      font-weight:600;
+      border:1px solid var(--line);
     }
 
-    .grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
-    .grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
-
-    .panel { padding: 24px; }
-
-    .timeline-item,
-    .list-item,
-    .pub-item,
-    .ref-item {
-      padding: 18px 0;
-      border-bottom: 1px solid var(--line);
+    .links-grid{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0,1fr));
+      gap:14px;
+      margin-top:22px;
     }
 
-    .timeline-item:last-child,
-    .list-item:last-child,
-    .pub-item:last-child,
-    .ref-item:last-child {
-      border-bottom: none;
-      padding-bottom: 0;
+    .link-card{
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:14px 16px;
+      background:#fcfeff;
     }
 
-    .item-top {
-      display: flex;
-      gap: 16px;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 8px;
+    .link-card strong{
+      display:block;
+      margin-bottom:6px;
+      color:var(--text);
+      font-size:0.95rem;
     }
 
-    .item-top h3,
-    .item-top h4 {
-      margin: 0;
-      font-size: 1.05rem;
-      line-height: 1.35;
+    .link-card a{
+      word-break:break-word;
+      font-size:0.92rem;
     }
 
-    .meta {
-      color: var(--muted);
-      font-size: 0.96rem;
+    /* Timeline */
+    .timeline{
+      display:grid;
+      gap:16px;
     }
 
-    .date-chip {
-      white-space: nowrap;
-      color: var(--text);
-      background: rgba(255,255,255,0.07);
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      padding: 6px 12px;
-      font-size: 0.88rem;
-      font-weight: 600;
+    .timeline-item{
+      padding:22px;
     }
 
-    ul.clean {
-      margin: 10px 0 0;
-      padding-left: 18px;
-      color: var(--muted);
+    .timeline-top{
+      display:flex;
+      justify-content:space-between;
+      gap:18px;
+      align-items:flex-start;
+      margin-bottom:8px;
     }
 
-    .tags { margin-top: 12px; }
-
-    .tag {
-      display: inline-block;
-      padding: 6px 10px;
-      border-radius: 999px;
-      background: rgba(124,198,255,0.1);
-      border: 1px solid rgba(124,198,255,0.2);
-      color: #dff1ff;
-      font-size: 0.85rem;
-      margin: 0 8px 8px 0;
+    .timeline-top h3{
+      font-size:1.08rem;
+      margin-bottom:4px;
     }
 
-    .pub-head {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 10px;
-      flex-wrap: wrap;
+    .meta{
+      color:var(--muted);
+      font-size:0.94rem;
     }
 
-    .pub-index {
-      min-width: 58px;
-      padding: 7px 10px;
-      text-align: center;
-      border-radius: 12px;
-      background: rgba(142,125,255,0.14);
-      border: 1px solid rgba(142,125,255,0.24);
-      font-weight: 800;
-      font-size: 0.88rem;
+    .date{
+      white-space:nowrap;
+      color:var(--primary-dark);
+      font-size:0.88rem;
+      font-weight:700;
+      background:var(--secondary);
+      padding:7px 12px;
+      border-radius:999px;
+      border:1px solid var(--line);
     }
 
-    .pub-note {
-      color: var(--muted);
-      font-size: 0.94rem;
-      margin-top: 8px;
+    .timeline-item ul{
+      padding-left:18px;
+      color:var(--muted);
+      margin-top:10px;
     }
 
-    .split {
-      display: grid;
-      grid-template-columns: 1.4fr 1fr;
-      gap: 18px;
+    /* Grid cards */
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0,1fr));
+      gap:18px;
     }
 
-    .contact-list, .skill-list {
-      display: grid;
-      gap: 14px;
+    .info-card{
+      padding:22px;
     }
 
-    .contact-line {
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
-      color: var(--muted);
-      word-break: break-word;
+    .info-card h3{
+      font-size:1.05rem;
+      margin-bottom:8px;
+      color:var(--text);
     }
 
-    .contact-line strong { color: var(--text); min-width: 92px; }
-
-    .skill-row {
-      padding: 14px 16px;
-      border-radius: 16px;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid var(--line);
+    .info-card p{
+      color:var(--muted);
+      font-size:0.94rem;
     }
 
-    .skill-row strong { display: block; margin-bottom: 6px; }
-
-    footer {
-      padding: 36px 0 50px;
-      color: var(--muted);
-      text-align: center;
+    /* Publications */
+    .pub-list{
+      display:grid;
+      gap:14px;
     }
 
-    @media (max-width: 1100px) {
-      .hero-grid,
-      .split,
-      .grid-2,
-      .grid-3,
-      .quick-grid { grid-template-columns: 1fr; }
-      nav { justify-content: flex-start; }
+    .pub-item{
+      padding:20px 22px;
     }
 
-    @media (max-width: 760px) {
-      .topbar-inner,
-      .item-top,
-      .section-header { flex-direction: column; align-items: flex-start; }
-      .hero-main, .profile-card, .panel { padding: 20px; }
-      .container { width: min(calc(100% - 20px), var(--max)); }
-      h1 { font-size: 2.2rem; }
-      .date-chip { white-space: normal; }
+    .pub-label{
+      display:inline-block;
+      margin-bottom:10px;
+      font-size:0.8rem;
+      font-weight:700;
+      letter-spacing:0.05em;
+      color:var(--primary-dark);
+      background:var(--secondary);
+      border:1px solid var(--line);
+      padding:6px 10px;
+      border-radius:999px;
+    }
+
+    .pub-item h3{
+      font-size:1.02rem;
+      margin-bottom:8px;
+      line-height:1.55;
+    }
+
+    .pub-item p{
+      color:var(--muted);
+      font-size:0.94rem;
+    }
+
+    /* Skills */
+    .skills-grid{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0,1fr));
+      gap:18px;
+    }
+
+    .skill-card{
+      padding:24px;
+    }
+
+    .skill-card h3{
+      margin-bottom:14px;
+      font-size:1.1rem;
+    }
+
+    .skill-card ul{
+      padding-left:18px;
+      color:var(--muted);
+    }
+
+    .skill-card li + li{
+      margin-top:8px;
+    }
+
+    /* Footer */
+    footer{
+      padding:32px 0;
+      background:#0f172a;
+      color:#cbd5e1;
+      text-align:center;
+      margin-top:20px;
+    }
+
+    footer p + p{
+      margin-top:6px;
+    }
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .about-grid,
+      .skills-grid,
+      .grid,
+      .links-grid{
+        grid-template-columns:1fr;
+      }
+
+      .profile-card{
+        position:static;
+      }
+    }
+
+    @media (max-width: 860px){
+      .menu-toggle{
+        display:block;
+      }
+
+      nav{
+        position:relative;
+      }
+
+      nav ul{
+        display:none;
+        position:absolute;
+        top:60px;
+        right:0;
+        width:min(280px, 100%);
+        background:white;
+        border:1px solid var(--line);
+        border-radius:16px;
+        box-shadow:var(--shadow);
+        padding:10px;
+        flex-direction:column;
+      }
+
+      nav ul.active{
+        display:flex;
+      }
+
+      nav a{
+        width:100%;
+      }
+
+      .timeline-top{
+        flex-direction:column;
+      }
+
+      .date{
+        white-space:normal;
+      }
+    }
+
+    @media (max-width: 640px){
+      .container{
+        width:min(calc(100% - 20px), var(--max-width));
+      }
+
+      .section{
+        padding:56px 0;
+      }
+
+      .hero{
+        padding:72px 0 56px;
+      }
+
+      .hero-meta{
+        flex-direction:column;
+        align-items:center;
+      }
+
+      .profile-card,
+      .about-main,
+      .timeline-item,
+      .info-card,
+      .pub-item,
+      .skill-card{
+        padding:18px;
+      }
     }
   </style>
 </head>
 <body>
-  <header class="topbar">
-    <div class="container topbar-inner">
-      <div class="brand">
-        <div class="brand-badge">MB</div>
-        <div>
-          <div>Mohan Bhandari</div>
-          <div style="font-size:.88rem;color:var(--muted);font-weight:500;">Academic Profile & Research Portfolio</div>
-        </div>
-      </div>
+
+  <header>
+    <div class="container nav-wrap">
+      <a href="#home" class="logo">Mohan Bhandari</a>
       <nav>
-        <a href="#bio">Bio</a>
-        <a href="#education">Education</a>
-        <a href="#experience">Experience</a>
-        <a href="#publications">Publications</a>
-        <a href="#editorial">Editorial</a>
-        <a href="#datasets">Datasets</a>
-        <a href="#skills">Skills</a>
-        <a href="#references">References</a>
+        <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#publications">Publications</a></li>
+          <li><a href="#editorial">Editorial</a></li>
+          <li><a href="#datasets">Datasets</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#references">References</a></li>
+        </ul>
       </nav>
     </div>
   </header>
 
-  <main>
-    <section class="hero">
-  <div class="container">
-    <div class="hero-wrap card">
-      
-      <div class="hero-left">
-        <div class="profile-photo">
-          <span>MB</span>
-        </div>
-
-        <div class="contact-stack">
-          <div class="mini-card">
-            <strong>Location</strong>
-            <span>Dhikurpokhari, Annapurna-2, Gandaki - 33700, Nepal</span>
-          </div>
-          <div class="mini-card">
-            <strong>Email</strong>
-            <a href="mailto:mail2mohanbhandari@gmail.com">mail2mohanbhandari@gmail.com</a>
-          </div>
-          <div class="mini-card">
-            <strong>Phone</strong>
-            <span>WhatsApp / Viber: +977-9856038767</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="hero-right">
-        <div class="hero-badge">PhD Scholar • Medical Image Processing • SIIT, Thammasat University</div>
-        
-        <h1>Mohan Bhandari</h1>
-        
-        <p class="hero-summary">
-          Researcher in medical image analysis, explainable AI, neural architecture search, and vision-language models, with a strong focus on human blastocyst analysis and intelligent healthcare systems.
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="hero-content">
+        <span class="hero-kicker">PhD Scholar • Medical Image Processing • SIIT, Thammasat University</span>
+        <h1>Mohan <span>Bhandari</span></h1>
+        <p>
+          Researcher in medical image analysis, explainable AI, neural architecture search, and vision-language models, with a focus on human blastocyst analysis and intelligent healthcare systems.
         </p>
-
-        <p class="hero-summary secondary">
-          Associate Editor, active reviewer, and award-winning researcher with experience in academic teaching, research supervision, and international collaboration.
-        </p>
-
-        <div class="hero-tags">
-          <span class="tag">Explainable AI</span>
-          <span class="tag">Medical Imaging</span>
-          <span class="tag">Neural Architecture Search</span>
-          <span class="tag">Vision-Language Models</span>
-          <span class="tag">Blastocyst Analysis</span>
-        </div>
-
         <div class="hero-actions">
-          <a class="btn btn-primary" href="mailto:mail2mohanbhandari@gmail.com">Contact Me</a>
-          <a class="btn btn-secondary" href="https://scholar.google.com/citations?hl=en&authuser=1&user=yH2GdSQAAAAJ" target="_blank" rel="noreferrer">Google Scholar</a>
-          <a class="btn btn-secondary" href="https://github.com/MohanBhandari" target="_blank" rel="noreferrer">GitHub</a>
+          <a href="#about" class="btn btn-primary">About Me</a>
+          <a href="#publications" class="btn btn-secondary">View Publications</a>
+          <a href="mailto:mail2mohanbhandari@gmail.com" class="btn btn-secondary">Contact</a>
         </div>
-
-        <div class="hero-stats">
-          <div class="stat-box">
-            <strong>PhD Research</strong>
-            <span>Human Blastocyst Analysis</span>
-          </div>
-          <div class="stat-box">
-            <strong>Editorial Role</strong>
-            <span>Associate Editor, Frontiers in Digital Health</span>
-          </div>
-          <div class="stat-box">
-            <strong>Research Focus</strong>
-            <span>AI for healthcare and interpretable imaging</span>
-          </div>
+        <div class="hero-meta">
+          <span>📍 Nepal / Thailand</span>
+          <span>📧 mail2mohanbhandari@gmail.com</span>
+          <span>🔬 Explainable AI • Medical Imaging • Blastocyst Analysis</span>
         </div>
       </div>
-
     </div>
-  </div>
-</section>
+  </section>
 
-    <section class="section" id="education">
-      <div class="container split">
-        <div class="card panel">
-          <div class="section-header">
-            <div>
-              <h2>Core Links</h2>
-              <p>Primary online identities and research profiles.</p>
-            </div>
-          </div>
+  <section class="section" id="about">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <p class="section-subtitle">
+        Academic profile, research focus, and professional identity.
+      </p>
+
+      <div class="about-grid">
+        <aside class="card profile-card">
+          <div class="avatar">MB</div>
+          <h3>Mohan Bhandari</h3>
+          <p>PhD Scholar in Medical Image Processing</p>
+
           <div class="contact-list">
-            <div class="contact-line"><strong>Website</strong><span><a href="https://mohanbhandari.github.io/" target="_blank" rel="noreferrer">https://mohanbhandari.github.io/</a></span></div>
-            <div class="contact-line"><strong>LinkedIn</strong><span><a href="https://www.linkedin.com/in/mohan-bhandari-4b3648ba/" target="_blank" rel="noreferrer">mohan-bhandari</a></span></div>
-            <div class="contact-line"><strong>ResearchGate</strong><span><a href="https://www.researchgate.net/profile/Mohan-Bhandari?ev=hdr_xprf" target="_blank" rel="noreferrer">Mohan Bhandari</a></span></div>
-            <div class="contact-line"><strong>ORCID</strong><span><a href="https://orcid.org/0000-0003-2551-3163" target="_blank" rel="noreferrer">0000-0003-2551-3163</a></span></div>
-            <div class="contact-line"><strong>WoS</strong><span><a href="https://www.webofscience.com/wos/author/record/KVC-3085-2024" target="_blank" rel="noreferrer">KVC-3085-2024</a></span></div>
-            <div class="contact-line"><strong>Scopus</strong><span><a href="https://www.scopus.com/authid/detail.uri?authorId=57645591300" target="_blank" rel="noreferrer">57645591300</a></span></div>
-            <div class="contact-line"><strong>Scholar</strong><span><a href="https://scholar.google.com/citations?hl=en&authuser=1&user=yH2GdSQAAAAJ" target="_blank" rel="noreferrer">Google Scholar Profile</a></span></div>
-            <div class="contact-line"><strong>DBLP</strong><span><a href="https://dblp.dagstuhl.de/pid/320/9122.html" target="_blank" rel="noreferrer">9122</a></span></div>
-            <div class="contact-line"><strong>ScholarGPS</strong><span><a href="https://scholargps.com/scholars/17852605390362/mohan-bhandari" target="_blank" rel="noreferrer">17852605390362</a></span></div>
-            <div class="contact-line"><strong>Medium</strong><span><a href="https://medium.com/@mail2mohanbhandari" target="_blank" rel="noreferrer">@mail2mohanbhandari</a></span></div>
-            <div class="contact-line"><strong>GitHub</strong><span><a href="https://github.com/MohanBhandari" target="_blank" rel="noreferrer">MohanBhandari</a></span></div>
-            <div class="contact-line"><strong>Kaggle</strong><span><a href="https://www.kaggle.com/mohanbhandari" target="_blank" rel="noreferrer">mohanbhandari</a></span></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="education">
-      <div class="container">
-        <div class="section-header">
-          <div>
-            <h2>Education</h2>
-            <p>Academic path from secondary education to doctoral research.</p>
-          </div>
-        </div>
-        <div class="card panel">
-          <div class="timeline-item">
-            <div class="item-top">
-              <div>
-                <h3>Sirindhorn International Institute of Technology, Thammasat University</h3>
-                <div class="meta">Doctor of Philosophy (Engineering and Technology) • Rangsit, Pathum Thani, Thailand</div>
-              </div>
-              
+            <div class="contact-item">
+              <strong>Location</strong>
+              <span>Dhikurpokhari, Annapurna-2, Gandaki - 33700, Nepal</span>
             </div>
-            <ul class="clean"><li>Dissertation Topic: Human Blastocyst Analysis</li></ul>
-          </div>
-          <div class="timeline-item">
-            <div class="item-top">
-              <div>
-                <h3>Nepal College of Information Technology</h3>
-                <div class="meta">Master of Computer Engineering • Lalitpur, Nepal</div>
-              </div>
-              
+            <div class="contact-item">
+              <strong>Email</strong>
+              <span><a href="mailto:mail2mohanbhandari@gmail.com">mail2mohanbhandari@gmail.com</a></span>
             </div>
-            <ul class="clean"><li>Dissertation Topic: <a href="https://doi.org/10.1007/978-3-031-07005-1_15" target="_blank" rel="noreferrer">Performance Analysis of Adam Optimization on Introducing Energy Index</a></li></ul>
-          </div>
-          <div class="timeline-item">
-            <div class="item-top">
-              <div>
-                <h3>Pokhara Engineering College</h3>
-                <div class="meta">Bachelor of Computer Engineering • Phirke, Pokhara, Nepal</div>
-              </div>
-             
+            <div class="contact-item">
+              <strong>Phone</strong>
+              <span>WhatsApp / Viber: +977-9856038767</span>
             </div>
-            <ul class="clean"><li>Major Project: <a href="https://drive.google.com/file/d/12uSVnx2cSFOA8r2KmO90BYkgU5xg6aQO/view?usp=sharing" target="_blank" rel="noreferrer">Video On Demand</a> (Sending SMS to the IVR system to play the requested video)</li></ul>
-          </div>
-          <div class="timeline-item">
-            <div class="item-top">
-              <div>
-                <h3>New Galaxy Higher Secondary School</h3>
-                <div class="meta">Higher Secondary Education • Phirke, Pokhara, Nepal</div>
-              </div>
-              
-            </div>
-            <ul class="clean"><li>Stream: Physics</li></ul>
-          </div>
-          <div class="timeline-item">
-            <div class="item-top">
-              <div>
-                <h3>Morning Star Secondary School</h3>
-                <div class="meta">Secondary Education • Dhikurpokhari, Annapurna-2, Nepal</div>
-              </div>
-             
+            <div class="contact-item">
+              <strong>Current Role</strong>
+              <span>PhD Scholar, SIIT, Thammasat University</span>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
+        </aside>
 
-    <section class="section" id="awards">
-      <div class="container">
-        <div class="section-header">
-          <div>
-            <h2>Awards and Scholarships</h2>
-            <p>Scholarships, best paper recognition, and software competition wins.</p>
-          </div>
-        </div>
-        <div class="card panel">
-          <div class="timeline-item">
-            <div class="item-top"><div><h3>Sirindhorn International Institute of Technology, Thammasat University</h3><div class="meta">Excellent Foreign Scholarship • Rangsit, Pathum Thani, Thailand</div></div><div class="date-chip">2024–2026</div></div>
-          </div>
-          <div class="timeline-item">
-            <div class="item-top"><div><h3>2nd International Conference on Innovative Practices in Technology and Management</h3><div class="meta"><a href="https://drive.google.com/file/d/1OKjmHi2MLr34GP7jdg4BWhBzKuA8ZnXd/view?usp=sharing" target="_blank" rel="noreferrer">Best Research Paper Award</a> • Amity University, Noida, India</div></div><div class="date-chip">23rd – 25th Feb, 2024</div></div>
-            <ul class="clean"><li>Conference Paper: <a href="https://ieeexplore.ieee.org/document/9753917" target="_blank" rel="noreferrer">Image Steganography Approach Based Ant Colony Optimization With Triangular Chaotic Map</a></li></ul>
-          </div>
-          <div class="timeline-item">
-            <div class="item-top"><div><h3>5th Pokhara Engineering Exhibition</h3><div class="meta"><a href="https://drive.google.com/file/d/12uSVnx2cSFOA8r2KmO90BYkgU5xg6aQO/view?usp=sharing" target="_blank" rel="noreferrer">First Position In Software Competition</a> • PEC, Phirke, Pokhara, Nepal</div></div><div class="date-chip">16th – 17th September, 2011</div></div>
-            <ul class="clean"><li>Software: "Video on Demand" with a major objective of broadcasting the request video automatically based on SMS</li></ul>
-          </div>
-          <div class="timeline-item">
-            <div class="item-top"><div><h3>GCES IT Mahotsav 2067</h3><div class="meta"><a href="https://drive.google.com/file/d/1YVGHNTsUjCTOWtLy0eJxJB9Mp7Aibsdt/view?usp=sharing" target="_blank" rel="noreferrer">First Position In Software Competition</a> • GCES, Lamachaur, Pokhara, Nepal</div></div><div class="date-chip">7th – 9th April, 2011</div></div>
-            <ul class="clean"><li>Software: "Cheque Recorder" with a major objective of sending notification to cash the cheque on a particular date.</li></ul>
-          </div>
-          <div class="timeline-item">
-            <div class="item-top"><div><h3>New Galaxy Higher Secondary School</h3><div class="meta">Academic Scholarship • Nadipur, Pokhara Municipality, Nepal</div></div><div class="date-chip">2003</div></div>
-            <ul class="clean"><li>100% Scholarship in Tuition Fee when admitted to Higher Secondary Education</li></ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="experience">
-      <div class="container">
-        <div class="section-header">
-          <div>
-            <h2>Academic Experience</h2>
-            <p>Teaching, supervision, and research-focused academic appointments.</p>
-          </div>
-        </div>
-        <div class="card panel">
-          <div class="timeline-item">
-            <div class="item-top"><div><h3>Sirindhorn International Institute of Technology, Thammasat University</h3><div class="meta">Teaching Assistant (For undergraduate level) • Rangsit, Pathum Thani, Thailand</div></div><div class="date-chip">Aug 2024 – Running</div></div>
-            <ul class="clean"><li>Description: Assisting instructors in the teaching learning process for different subjects such as database management systems, computer graphics, Python, and data structures</li></ul>
-          </div>
-          <div class="timeline-item">
-            <div class="item-top"><div><h3>Samriddhi College</h3><div class="meta">Senior Lecturer (For undergraduate level) | Research Committee Member • Lokanthali, Bhaktapur, Nepal</div></div><div class="date-chip">Sep 2015 – Dec 2023</div></div>
-            <ul class="clean"><li>Description: Giving lecture classes on programming, artificial intelligence, and image processing subjects, motivating and helping students adapt to research activities</li></ul>
-          </div>
-          <div class="timeline-item">
-            <div class="item-top"><div><h3>Phoenix College of Management</h3><div class="meta">Adjunct Faculty (For graduate level) • Maitidevi, Kathmandu, Nepal</div></div><div class="date-chip">June 2021 – Dec 2023</div></div>
-            <ul class="clean"><li>Description: Giving a lecture on "Data Warehousing and Data Mining" and mentoring students on their thesis work as a supervisor</li></ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="publications">
-      <div class="container">
-        <div class="section-header">
-          <div>
-            <h2>Publications</h2>
-            <p>J = Journal, B = Book Chapter, C = Conference, * = Corresponding Author.</p>
-          </div>
-        </div>
-        <div class="card panel">
-
-          <div class="pub-item"><div class="pub-head"><span class="pub-index">[J.11]</span><h3>Mohan Bhandari, Stanislav S. Makhanov. (2026). NMT-UNet: Neural Architecture Search for Multi-Task UNet to Segment Human Blastocyst Components.</h3></div><div class="meta"><em>IEEE Access</em>, 14, 39016-39032. DOI: <a href="https://doi.org/10.1109/ACCESS.2026.3672466" target="_blank" rel="noreferrer">10.1109/ACCESS.2026.3672466</a>.</div><div class="pub-note">Quartile: Q1 (SJR 2025), IF = 3.6 (2025).</div></div>
-
-          <div class="pub-item"><div class="pub-head"><span class="pub-index">[J.10]</span><h3>Mohan Bhandari*, Aakash Thapa, Loknath Regmi, Suman Sharma, Prakash Paudel, Sanjeeb Prasad Panday. (2025). Interpreting decisions of lightweight CNN for glitch classification in time frequency images: Enhancing black-hole merger detection in O1 and O2 runs.</h3></div><div class="meta"><em>Physics of the Dark Universe</em>, 48, 101914. DOI: <a href="https://doi.org/10.1016/j.dark.2025.101914" target="_blank" rel="noreferrer">10.1016/j.dark.2025.101914</a>.</div><div class="pub-note">Quartile: Q1 (SJR 2025), IF = 6.4 (2025).</div></div>
-
-          <div class="pub-item"><div class="pub-head"><span class="pub-index">[J.9]</span><h3>Mohan Bhandari*, Darshan Bhusal, Kishor Singh, Bishnu Bashyal. (2024). Enhanced Ulcer Detection Using GAN-Augmented Image Processing and Convolutional Neural Networks.</h3></div><div class="meta"><em>International Journal on Engineering Technology</em>, 2(1). DOI: <a href="https://doi.org/10.3126/injet.v2i1.72489" target="_blank" rel="noreferrer">10.3126/injet.v2i1.72489</a>.</div></div>
-
-          <div class="pub-item"><div class="pub-head"><span class="pub-index">[J.8]</span><h3>Mohan Bhandari*, Sushant Shrestha, Utsab Karki, Santosh Adhikari, Rajan Gaihre. (2024). Predicting manipulated regions in deepfake videos using convolutional vision transformers.</h3></div><div class="meta"><em>Computing and Artificial Intelligence</em>, 2(2). DOI: <a href="https://doi.org/10.59400/cai.v2i2.1409" target="_blank" rel="noreferrer">10.59400/cai.v2i2.1409</a>.</div></div>
-
-          <div class="pub-item"><div class="pub-head"><span class="pub-index">[J.7]</span><h3>Loveleen Gaur, Mohan Bhandari, Bhadwal Singh Shikhar, Jhanjhi NZ, Mohammad Shorfuzzaman, Mehedi Masud. (2023). Explanation-Driven HCI Model to Examine the Mini-Mental State for Alzheimer's Disease.</h3></div><div class="meta"><em>ACM Transactions on Multimedia Computing, Communications, and Applications</em>, 20(2), 1-16. DOI: <a href="https://doi.org/10.1145/3527174" target="_blank" rel="noreferrer">10.1145/3527174</a>.</div><div class="pub-note">Quartile: Q1 (SJR 2025), IF = 6.0 (2025).</div></div>
-
-          <div class="pub-item"><div class="pub-head"><span class="pub-index">[J.6]</span><h3>Mohan Bhandari, Pratheepan Yogarajah, Muthu Kavitha, Joan Condell. (2023). Robust Light Weight Deep Learning Model to Augur Deep Features of Renal Abnormalities: Cyst, Stone and Tumor.</h3></div><div class="meta"><em>Applied Sciences</em>, 13(5), 3125. DOI: <a href="https://doi.org/10.3390/app13053125" target="_blank" rel="noreferrer">10.3390/app13053125</a>.</div><div class="pub-note">Quartile: Q2 (SJR 2025), IF = 2.5 (2025).</div></div>
-
-          <div class="pub-item"><div class="pub-head"><span class="pub-index">[J.5]</span><h3>Mohan Bhandari, Tej Bahadur Shahi, Arjun Neupane, Kerry Brian Walsh. (2023). BotanicX-AI: Identification of Tomato Leaf Diseases using Explanation-driven Deep Learning Model.</h3></div><div class="meta"><em>Journal of Imaging</em>, 9(2), 53. DOI: <a href="https://doi.org/10.3390/jimaging9020053" target="_blank" rel="noreferrer">10.3390/jimaging9020053</a>.</div><div class="pub-note">Quartile: Q2 (SJR 2025), IF = 3.3 (2024).</div></div>
-
-          <div class="pub-item"><div class="pub-head"><span class="pub-index">[J.4]</span><h3>Mohan Bhandari, Tej Bahadur Shahi, Arjun Neupane. (2023). Evaluating Retinal Disease Diagnosis with an Interpretable Lightweight CNN Model Resistant to Adversarial Attacks.</h3></div><div class="meta"><em>Journal of Imaging</em>, 9(10), 219. DOI: <a href="https://doi.org/10.3390/jimaging9100219" target="_blank" rel="noreferrer">10.3390/jimaging9100219</a>.</div><div class="pub-note">Quartile: Q2 (SJR 2025), IF = 3.3 (2025).</div></div>
-
-          <div class="pub-item"><div class="pub-head"><span class="pub-index">[J.3]</span><h3>Mohan Bhandari, Tej Bahadur Shahi, Birat Siku, Arjun Neupane. (2022). Explanatory classification of CXR images into COVID-19, Pneumonia and Tuberculosis using deep learning and XAI.</h3></div><div class="meta"><em>Computers in Biology and Medicine</em>, 150, 106156. DOI: <a href="https://doi.org/10.1016/j.compbiomed.2022.106156" target="_blank" rel="noreferrer">10.1016/j.compbiomed.2022.106156</a>.</div><div class="pub-note">Quartile: Q1 (SJR 2025).</div></div>
-
-          <div class="pub-item"><div class="pub-head"><span class="pub-index">[J.2]</span><h3>Mohan Bhandari, Arjun Neupane, Saurav Mallik, Loveleen Gaur, Hong Qin. (2022). Auguring Fake Faces Images Using Dual Input Convolutional Neural Network.</h3></div><div class="meta"><em>Journal of Imaging</em>, 9(1), 3. DOI: <a href="https://doi.org/10.3390/jimaging9010003" target="_blank" rel="noreferrer">10.3390/jimaging9010003</a>.</div><div class="pub-note">Quartile: Q2 (SJR 2025), IF = 3.3 (2025).</div></div>
-
-          <div class="pub-item"><div class="pub-head"><span class="pub-index">[J.1]</span><h3>Loveleen Gaur, Mohan Bhandari, Tanvi Razdan, Saurav Mallik, Zhongming Zhao. (2022). Explanation driven Deep Learning Model for Prediction of Brain Tumour Status Using MRI Image Data.</h3></div><div class="meta"><em>Frontiers of Genetics</em>, 13, 822666. DOI: <a href="https://doi.org/10.3389/fgene.2022.822666" target="_blank" rel="noreferrer">10.3389/fgene.2022.822666</a>.</div><div class="pub-note">Quartile: Q2 (SJR 2025), IF = 2.8 (2025).</div></div>
-
-          <div class="pub-item"><div class="pub-head"><span class="pub-index">[B.1]</span><h3>Loveleen Gaur, Mohan Bhandari, Tanvi Razdan. (2022). Development of Image Translating Model to Counter Adversarial Attacks.</h3></div><div class="meta">In <em>Deepfakes</em> (pp. 16). CRC Press (Taylor &amp; Francis). DOI: <a href="https://doi.org/10.1201/9781003231493-5" target="_blank" rel="noreferrer">10.1201/9781003231493-5</a>.</div></div>
-
-          <div class="pub-item"><div class="pub-head"><span class="pub-index">[C.4]</span><h3>Mohan Bhandari, Smriti KC, Anam Afaq, Loveleen Gaur. (2025). Vision Language Model for Clinical Decision Support System.</h3></div><div class="meta">In <em>Proceedings of the International Conference on Innovation in Computing, Science, Engineering and Technology (ICICSET 2025)</em> (Vol. 2, pp. 45-50). Kathmandu, Nepal. DOI: <a href="https://doi.org/10.65091/icicset.v2i1.11" target="_blank" rel="noreferrer">10.65091/icicset.v2i1.11</a>.</div></div>
-
-          <div class="pub-item"><div class="pub-head"><span class="pub-index">[C.3]</span><h3>Mohan Bhandari, Subash Pandey, Chandra Prakash Bhatta, Sanjeev Pandey. (2022). Image Steganography Approach Based Ant Colony Optimization With Triangular Chaotic Map.</h3></div><div class="meta">In <em>2nd International Conference on Innovative Practices in Technology and Management (ICIPTM)</em> (Vol. 2, pp. 429-434). Noida, India: IEEE. DOI: <a href="https://doi.org/10.1109/ICIPTM54933.2022.9753917" target="_blank" rel="noreferrer">10.1109/ICIPTM54933.2022.9753917</a>.</div></div>
-
-          <div class="pub-item"><div class="pub-head"><span class="pub-index">[C.2]</span><h3>Pralhad Chapagain, Mohan Bhandari, Roshan Chitrakar, Arun K. Timilsina. (2022). Intrusion Detection Based on PCA with Improved K-Means.</h3></div><div class="meta">In <em>Innovations in Electrical and Electronic Engineering (ICEEE 2022)</em> (Vol. 13, pp. 13-17). New Delhi, India: Springer. DOI: <a href="https://doi.org/10.1007/978-981-19-1677-9_2" target="_blank" rel="noreferrer">10.1007/978-981-19-1677-9_2</a>.</div></div>
-
-          <div class="pub-item"><div class="pub-head"><span class="pub-index">[C.1]</span><h3>Mohan Bhandari, Pramod Parajuli, Pralhad Chapagain, Loveleen Gaur. (2022). Evaluating Performance of Adam Optimization by Proposing Energy Index.</h3></div><div class="meta">In <em>Fourth International Conference on Recent Trends in Image Processing and Pattern Recognition (RTIP2R 2021)</em> (Vol. 13, pp. 156–168). Msida, Malta: Springer. DOI: <a href="https://doi.org/10.1007/978-3-031-07005-1_15" target="_blank" rel="noreferrer">10.1007/978-3-031-07005-1_15</a>.</div></div>
-
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="supervised-publications">
-      <div class="container">
-        <div class="section-header">
-          <div>
-            <h2>Supervised Publications</h2>
-            <p>J = Journal, C = Conference, * = Corresponding Author.</p>
-          </div>
-        </div>
-        <div class="card panel">
-          <div class="pub-item"><div class="pub-head"><span class="pub-index">[J.8]</span><h3>Saugat Kafle, Prakash Paudel, Mohan Bhandari*. (2025). Beyond Accuracy and Classification: XAI Driven Interpretability in Cervical Cancer.</h3></div><div class="meta"><em>International Journal on Engineering Technology (InJET)</em>, 3(1). ISSN: 3021-940X. DOI: <a href="https://doi.org/10.3126/injet.v3i1.87023" target="_blank" rel="noreferrer">10.3126/injet.v3i1.87023</a>.</div></div>
-          <div class="pub-item"><div class="pub-head"><span class="pub-index">[J.7]</span><h3>Mohan Khanal, Bhim Kumar Thapa, Mohan Bhandari*. (2025). Weak Form of Market Efficiency in Nepalese Stock Market.</h3></div><div class="meta"><em>Journal of Business and Econometrics Studies</em>, 2(1). ISSN: 3049-7159. DOI: <a href="https://doi.org/10.61440/JBES.2025.v2.49" target="_blank" rel="noreferrer">10.61440/JBES.2025.v2.49</a>.</div></div>
-          <div class="pub-item"><div class="pub-head"><span class="pub-index">[J.6]</span><h3>Santosh Giri, Loknath Regmi, Sumit Yadav, Binaya Basnet, Binit KC, Mohan Bhandari*. (2024). Revolutionizing Currency Security: A Yolov8-Based Approach for Automated Detection of Counterfeit Nepali Banknotes.</h3></div><div class="meta"><em>Journal of Business and Econometrics Studies</em>, 1(6). ISSN: 3049-7159. DOI: <a href="https://doi.org/10.61440/JBES.2024.v1.47" target="_blank" rel="noreferrer">10.61440/JBES.2024.v1.47</a>.</div></div>
-          <div class="pub-item"><div class="pub-head"><span class="pub-index">[J.5]</span><h3>Tara Bahadur Thapa, Mohan Bhandari. (2023). Predicting Chronic Kidney Disease using ML algorithms and LIME.</h3></div><div class="meta"><em>Technical Journal</em>, 3(1). DOI: <a href="https://doi.org/10.3126/tj.v3i1.61946" target="_blank" rel="noreferrer">10.3126/tj.v3i1.61946</a>.</div></div>
-          <div class="pub-item"><div class="pub-head"><span class="pub-index">[J.4]</span><h3>Yuba Raj Oli, Loknath Regmi, Prakash Poudel, Satish Kumar Karna, Mohan Bhandari*. (2023). Unlocking the Potential of CT scans: An Explanation-Driven Deep Learning Model for Predicting Lung Cancer.</h3></div><div class="meta"><em>International Journal on Engineering Technology</em>, 1(1). DOI: <a href="https://doi.org/10.3126/injet.v1i1.60945" target="_blank" rel="noreferrer">10.3126/injet.v1i1.60945</a>.</div></div>
-          <div class="pub-item"><div class="pub-head"><span class="pub-index">[J.3]</span><h3>Mohan Khanal, Sudip Raj Khadka, Harendra Subedi, Indra Prasad Chaulagain, Lok Nath Regmi, Mohan Bhandari*. (2023). Explaining the Factors Affecting Customer Satisfaction in FinTech Firm 'F1 Soft' Using PCA and XAI.</h3></div><div class="meta"><em>FinTech</em>, 2(1). DOI: <a href="https://doi.org/10.3390/fintech2010006" target="_blank" rel="noreferrer">10.3390/fintech2010006</a>.</div><div class="pub-note">Quartile: Q1 (SJR 2025).</div></div>
-          <div class="pub-item"><div class="pub-head"><span class="pub-index">[J.2]</span><h3>Sudip Raj Khadka, Saphal Subedi, Bikash Kumar Aidy, Lok Nath Regmi, Ashish Parajuli, Mohan Bhandari*. (2023). Predicting Chronic Kidney Disease using ML algorithms and XAI.</h3></div><div class="meta"><em>Medicon Engineering Themes</em>, 4(6). DOI: <a href="https://doi.org/10.55162/MCET.04.142" target="_blank" rel="noreferrer">10.55162/MCET.04.142</a>.</div></div>
-          <div class="pub-item"><div class="pub-head"><span class="pub-index">[J.1]</span><h3>Satish Kumar Karna, Prakash Paudel, Ruby Saud, Mohan Bhandari*. (2023). Explainable Prediction of features contributing to Intrusion Detection using ML algorithms and LIME.</h3></div><div class="meta"><em>Medicon Engineering Themes</em>, 5(3). DOI: <a href="https://doi.org/10.55162/MCET.05.160" target="_blank" rel="noreferrer">10.55162/MCET.05.160</a>.</div></div>
-          <div class="pub-item"><div class="pub-head"><span class="pub-index">[C.5]</span><h3>Smriti KC, Iliya Fathma, Sudip Raj Khadka, Mohan Bhandari*. (2025). Generating Sanskrit Captions for Images using Transformers and Long Short-Term Memory.</h3></div><div class="meta">In <em>Proceedings of the International Conference on Innovation in Computing, Science, Engineering and Technology (ICICSET 2025)</em> (Vol. 2, pp. 39-44). Kathmandu, Nepal. DOI: <a href="https://doi.org/10.65091/icicset.v2i1.10" target="_blank" rel="noreferrer">10.65091/icicset.v2i1.10</a>.</div></div>
-          <div class="pub-item"><div class="pub-head"><span class="pub-index">[C.4]</span><h3>Prakash Paudel, Satish Kumar Karna, Ruby Saud, Loknath Regmi, Tara Bahadur Thapa, Mohan Bhandari*. (2023). Unveiling Key Predictors for Early Heart Attack Detection using Machine Learning and Explainable AI Technique with LIME.</h3></div><div class="meta">In <em>10th International Conference on Networking, Systems and Security (NSysS 2023)</em> (pp. 69-78). Khulna, Bangladesh: ACM. DOI: <a href="https://doi.org/10.1145/3629188.3629193" target="_blank" rel="noreferrer">10.1145/3629188.3629193</a>.</div></div>
-          <div class="pub-item"><div class="pub-head"><span class="pub-index">[C.3]</span><h3>Prakash Paudel, Ruby Saud, Satish Kumar Karna, Mohan Bhandari*. (2023). Determining the Major Contributing Features to Predict Breast Cancer Imposing ML Algorithms with LIME and SHAP.</h3></div><div class="meta">In <em>2023 International Conference on Electrical, Computer and Energy Technologies (ICECET)</em> (pp. 1-7). Cape Town, South Africa: IEEE. DOI: <a href="https://doi.org/10.1109/ICECET58911.2023.10389217" target="_blank" rel="noreferrer">10.1109/ICECET58911.2023.10389217</a>.</div></div>
-          <div class="pub-item"><div class="pub-head"><span class="pub-index">[C.2]</span><h3>Birat Siku, Sarila Ngakhusi, Sachin Pokharel, Lok Nath Regmi, Sudip Raj Khadka, Mohan Bhandari*. (2022). Deep Learning Based Brain Tumor Identification in MRI Images on Utilizing Deep Features.</h3></div><div class="meta">In <em>4th International Conference on Engineering and Technology (ICET 2022)</em> (Vol. IV). Lalitpur, Nepal: Kantipur Engineering College. ISSN: 2961-1997. URL: <a href="https://old.kecnepal.com/wp-content/uploads/2022/12/KEC-Conference-Proceeding-2022new.pdf" target="_blank" rel="noreferrer">Conference Proceedings</a>.</div></div>
-          <div class="pub-item"><div class="pub-head"><span class="pub-index">[C.1]</span><h3>Subash Pandey, Lok Nath Regmi, Chandra Prakash Bhatta, Sobit Gaha Thapa, Sudip Raj Khadka, Mohan Bhandari*. (2022). Counter Measuring the Adversarial Attack in Neural Network Using FGSM Model.</h3></div><div class="meta">In <em>4th International Conference on Engineering and Technology (ICET 2022)</em> (Vol. IV). Lalitpur, Nepal: Kantipur Engineering College. ISSN: 2961-1997. URL: <a href="https://old.kecnepal.com/wp-content/uploads/2022/12/KEC-Conference-Proceeding-2022new.pdf" target="_blank" rel="noreferrer">Conference Proceedings</a>.</div></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="editorial">
-      <div class="container grid-2">
-        <div class="card panel">
-          <div class="section-header">
-            <div>
-              <h2>Editorial</h2>
-              <p>Editorial contribution listed in the source.</p>
-            </div>
-          </div>
-          <div class="pub-item" style="padding-top:0;">
-            <div class="pub-head"><span class="pub-index">[E.1]</span><h3>Mohan Bhandari (2023). Artificial Intelligence, Transparency and Importance of Explainable AI.</h3></div>
-            <div class="meta"><em>Medicon Engineering Themes</em> • <a href="https://themedicon.com/pdf/engineeringthemes/MCET-04-119.pdf" target="_blank" rel="noreferrer">Read article</a></div>
-          </div>
-        </div>
-        <div class="card panel">
-          <div class="section-header">
-            <div>
-              <h2>Handling Editor</h2>
-              <p>Formal editorial role.</p>
-            </div>
-          </div>
-          <div class="timeline-item" style="padding-top:0;">
-            <div class="item-top">
-              <div>
-                <h3>Associate Editor for Health Informatics</h3>
-                <div class="meta">Frontiers in Digital Health</div>
-              </div>
-              <div class="date-chip">Since March 6, 2024</div>
-            </div>
-            <div class="meta"><a href="https://loop.frontiersin.org/people/1686777/overview" target="_blank" rel="noreferrer">Editorial profile</a></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="reviewing">
-      <div class="container">
-        <div class="section-header"><div><h2>Peer-review Contributions</h2><p>Served as a reviewer in national and international journals and conferences.</p></div></div>
-        <div class="card panel">
-          <p style="margin-top:0;color:var(--muted);">
-            <a href="https://www.webofscience.com/wos/author/record/KVC-3085-2024" target="_blank" rel="noreferrer">IEEE Access</a> - IEEE |
-            <a href="https://drive.google.com/file/d/1IxsFDrZve3nEZ5IHyUj4QzJ1s3Cjy2AQ/view?usp=sharing" target="_blank" rel="noreferrer">Computers in Biology and Medicine</a> - Elsevier |
-            <a href="https://drive.google.com/file/d/1S0TohBd4waxcxTIN-0YPFzzYtlovAtGq/view?usp=sharing" target="_blank" rel="noreferrer">Artificial Intelligence in Agriculture</a> - Elsevier |
-            Scientia Horticulturae - Elsevier |
-            <a href="https://drive.google.com/drive/folders/1PHtEz6-JNf4pyyqG3deG06sleWJ1Fz_G?usp=sharing" target="_blank" rel="noreferrer">Respiratory Research / Discover / Scientific Reports</a> - Springer Nature |
-            <a href="https://loop.frontiersin.org/people/1686777/editorial" target="_blank" rel="noreferrer">Frontiers in Aging Neuroscience / Frontiers in Neuroscience Neurodegeneration / Frontiers in Digital Health</a> - Frontier |
-            International Journal of Computational Biology and Drug Design - Inderscience Publishers |
-            Journal of Infectious Diseases and Epidemiology (University of Toronto) |
-            <a href="https://drive.google.com/file/d/1LgvSCYdUC3TjtzpW-JHj2cpsLJooFnCc/view?usp=sharing" target="_blank" rel="noreferrer">KEC Conference / International Journal on Engineering Technology</a> (Kantipur Engineering College-Nepal) |
-            <a href="https://themedicon.com/engineeringthemes-reviewer-board" target="_blank" rel="noreferrer">Medicon Journal</a> |
-            <a href="https://drive.google.com/file/d/1dgTjvBALhYe1PrzcgXotLbjbDZ6Ee9XK/view?usp=sharing" target="_blank" rel="noreferrer">International Conference on Artificial Intelligence and Human-Computer Interaction</a> and more ...
+        <div class="card about-main">
+          <h3>Profile Summary</h3>
+          <p>
+            Mohan Bhandari received Bachelor’s and Master’s degrees in Computer Engineering from Pokhara University and is currently pursuing a PhD in Medical Image Processing at Sirindhorn International Institute of Technology, Thammasat University, Thailand.
           </p>
-        </div>
-      </div>
-    </section>
+          <p>
+            His research focuses on explainable AI in medical imaging, neural architecture search, vision-language models, and human blastocyst analysis. He is also active in editorial work, peer review, academic teaching, and international research collaboration.
+          </p>
+          <p>
+            He serves as an Associate Editor for Frontiers in Digital Health and has received multiple recognitions including the Excellent Foreign Scholarship at SIIT and a Best Research Paper Award.
+          </p>
 
-    <section class="section" id="articles">
-      <div class="container">
-        <div class="section-header"><div><h2>Articles</h2><p>A = Articles from Medium and LinkedIn listed in the source.</p></div></div>
-        <div class="card panel">
-          <div class="list-item"><div class="item-top"><div><h4>[A.5] Mohan Bhandari (April 14, 2025)</h4><div class="meta"><a href="https://medium.com/@mail2mohanbhandari/data-augmentation-ce7c580038d8" target="_blank" rel="noreferrer">Data augmentation</a> • Medium</div></div></div></div>
-          <div class="list-item"><div class="item-top"><div><h4>[A.4] Mohan Bhandari (April 26, 2025)</h4><div class="meta"><a href="https://medium.com/@mail2mohanbhandari/understanding-the-differences-between-object-tracking-and-object-detection-f9869ded5676" target="_blank" rel="noreferrer">Understanding the Differences Between Object Detection and Object Tracking</a> • Medium</div></div></div></div>
-          <div class="list-item"><div class="item-top"><div><h4>[A.3] Mohan Bhandari (June 10, 2020)</h4><div class="meta"><a href="https://www.linkedin.com/pulse/resolve-could-load-file-assembly-wibucmnet-culture-neutral-bhandari/?trackingId=Vs8DXpOCYJKsxn2BMIrZEA%3D%3D" target="_blank" rel="noreferrer">Resolve "could not load file or assembly WiBuCmNet, Version=x.xx.xxx.xx, Culture= Neutral" in Viz Engine</a> • LinkedIn</div></div></div></div>
-          <div class="list-item"><div class="item-top"><div><h4>[A.2] Mohan Bhandari (June 5, 2020)</h4><div class="meta"><a href="https://www.linkedin.com/pulse/extract-cifar-10-data-set-mohan-bhandari/?trackingId=g%2FFlp50ObC2NwlPCPzJzeA%3D%3D" target="_blank" rel="noreferrer">Extract CIFAR-10 data set</a> • LinkedIn</div></div></div></div>
-          <div class="list-item"><div class="item-top"><div><h4>[A.1] Mohan Bhandari (April 28, 2020)</h4><div class="meta"><a href="https://www.linkedin.com/pulse/upgrade-ubuntu-2004-lts-from-1804-1910-mohan-bhandari/?trackingId=LMmZHI2kTVCyofUwyhXPcA%3D%3D" target="_blank" rel="noreferrer">Upgrade to Ubuntu 20.04 LTS from Ubuntu 18.04 &amp; 19.10</a> • LinkedIn</div></div></div></div>
-        </div>
-      </div>
-    </section>
+          <div class="tags">
+            <span class="tag">Explainable AI</span>
+            <span class="tag">Medical Image Processing</span>
+            <span class="tag">Neural Architecture Search</span>
+            <span class="tag">Vision-Language Models</span>
+            <span class="tag">Human Blastocyst Analysis</span>
+          </div>
 
-    <section class="section" id="datasets">
-      <div class="container">
-        <div class="section-header"><div><h2>Dataset Contribution</h2><p>Public dataset work listed in the source CV.</p></div></div>
-        <div class="card panel">
-          <div class="timeline-item"><div class="item-top"><div><h3>Sanskrit Image Captioning</h3><div class="meta"><a href="https://www.kaggle.com/datasets/mohanbhandari/sanskrit-image-captioning" target="_blank" rel="noreferrer">Kaggle dataset</a></div></div><div class="date-chip">2025</div></div><ul class="clean"><li>This dataset holds the sanskrit captions of each images in flicker dataset.</li></ul></div>
-          <div class="timeline-item"><div class="item-top"><div><h3>Test Images to UTSC_SmokeRS Dataset</h3><div class="meta"><a href="https://www.kaggle.com/datasets/mohanbhandari/test-images-to-utsc-smokers-dataset" target="_blank" rel="noreferrer">Kaggle dataset</a></div></div><div class="date-chip">2025</div></div><ul class="clean"><li>The test images for the UTSC_SmokeRS Dataset combines existing datasets for dust, smoke, and haze with new images sourced from high-resolution Planet SkySat satellite images to create a complete set for testing.</li></ul></div>
-          <div class="timeline-item"><div class="item-top"><div><h3>Nepali Handwriting Characters</h3><div class="meta"><a href="https://www.kaggle.com/datasets/mohanbhandari/nepali-handwriting-characters" target="_blank" rel="noreferrer">Kaggle dataset</a></div></div><div class="date-chip">2023</div></div><ul class="clean"><li>The data set contains 200 characters each from "ka" to "Gya" useful for nepali handwriting prediction projects</li></ul></div>
-          <div class="timeline-item"><div class="item-top"><div><h3>Nepali Hate Speech Collection</h3><div class="meta"><a href="https://www.kaggle.com/datasets/mohanbhandari/nepali-hate-speech-collection" target="_blank" rel="noreferrer">Kaggle dataset</a></div></div><div class="date-chip">2023</div></div><ul class="clean"><li>The data set details the corpus-based study of offensive language in Nepali Language. More than 18 different categories of linguistic offenses including politics, religion, race, and sex are considered, and 12 common euphemisms such as synonym, metaphor and circumlocution are discussed.</li></ul></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="skills">
-      <div class="container grid-2">
-        <div class="card panel">
-          <div class="section-header"><div><h2>Skills</h2><p>Technical and research strengths exactly mapped from the source.</p></div></div>
-          <div class="skill-list">
-            <div class="skill-row"><strong>Programming Languages</strong><span>Python, C#</span></div>
-            <div class="skill-row"><strong>Database Systems</strong><span>MySQL, MSSQL, SQLite, Firebase</span></div>
-            <div class="skill-row"><strong>Data Science &amp; Machine Learning</strong><span>Neural Networks (ML, DL), Vision Langauge Models, Neural Architectural Search</span></div>
-            <div class="skill-row"><strong>Version Control</strong><span>Git</span></div>
-            <div class="skill-row"><strong>Specialized Area</strong><span>Aritificial Intelligence, Game Development</span></div>
-            <div class="skill-row"><strong>Research Skills</strong><span>Medical Image Processing, Explainable AI, Vision Langauge Model</span></div>
+          <div class="links-grid">
+            <div class="link-card">
+              <strong>Website</strong>
+              <a href="https://mohanbhandari.github.io/" target="_blank" rel="noreferrer">mohanbhandari.github.io</a>
+            </div>
+            <div class="link-card">
+              <strong>Google Scholar</strong>
+              <a href="https://scholar.google.com/citations?hl=en&authuser=1&user=yH2GdSQAAAAJ" target="_blank" rel="noreferrer">Scholar Profile</a>
+            </div>
+            <div class="link-card">
+              <strong>ORCID</strong>
+              <a href="https://orcid.org/0000-0003-2551-3163" target="_blank" rel="noreferrer">0000-0003-2551-3163</a>
+            </div>
+            <div class="link-card">
+              <strong>Scopus</strong>
+              <a href="https://www.scopus.com/authid/detail.uri?authorId=57645591300" target="_blank" rel="noreferrer">Author Profile</a>
+            </div>
+            <div class="link-card">
+              <strong>GitHub</strong>
+              <a href="https://github.com/MohanBhandari" target="_blank" rel="noreferrer">MohanBhandari</a>
+            </div>
+            <div class="link-card">
+              <strong>ResearchGate</strong>
+              <a href="https://www.researchgate.net/profile/Mohan-Bhandari?ev=hdr_xprf" target="_blank" rel="noreferrer">Mohan Bhandari</a>
+            </div>
           </div>
         </div>
-        <div class="card panel">
-          <div class="section-header"><div><h2>Additional Information</h2><p>Languages, interests, professional membership, and profile notes.</p></div></div>
-          <div class="list-item" style="padding-top:0;"><strong>Languages</strong><div class="meta">English (Proficiency: Medium), Nepali (Proficiency: Medium)</div></div>
-          <div class="list-item"><strong>Interests</strong><div class="meta">Programming, Research Innovation</div></div>
-          <div class="list-item"><strong>Professional Memberships</strong><div class="meta">Nepal Engineering Council</div><div class="pub-note">NEC Registration Number:- 3824 "Computer". Issued On: 09 Nov, 2015</div></div>
-        </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="section" id="references">
-      <div class="container">
-        <div class="section-header"><div><h2>References</h2><p>Professional references and relationships listed in the source CV.</p></div></div>
-        <div class="card panel">
-          <div class="ref-item"><div class="item-top"><div><h3>Stanislav S. Makhananov (Ph.D)</h3><div class="meta">Full Professor - SIIT, Thammasat University, Thailand</div></div></div><div class="pub-note">Relationship: Ph.D Advisor</div></div>
-          <div class="ref-item"><div class="item-top"><div><h3>Pratheepan Yogarajah (Ph.D)</h3><div class="meta">Lecturer - Computer Science, Ulster University, UK</div></div></div><div class="pub-note">Relationship: Research Co-Author</div></div>
-          <div class="ref-item"><div class="item-top"><div><h3>Loveleen Gaur (Ph.D)</h3><div class="meta">Full Professor | Program Director (AI &amp; Data Analytics), Amity University, India | Senior IEEE Member | IEEE Brand Ambassador</div></div></div><div class="pub-note">Relationship: Research Co-Author</div></div>
-          <div class="ref-item"><div class="item-top"><div><h3>Pramod Parajuli</h3><div class="meta">Chief Innovation Officer, Nepal Payment | Principal, CG Institute of Management</div></div></div><div class="pub-note">Relationship: Master Thesis Supervisor</div></div>
-          <div class="ref-item"><div class="item-top"><div><h3>Saroj Shakya</h3><div class="meta">Full Professor, Nepal College of Information and Technology</div></div></div><div class="pub-note">Relationship: Masters' Co-ordinator</div></div>
+  <section class="section" id="education">
+    <div class="container">
+      <h2 class="section-title">Education</h2>
+      <p class="section-subtitle">Academic journey from secondary education to doctoral research.</p>
+
+      <div class="timeline">
+        <div class="card timeline-item">
+          <div class="timeline-top">
+            <div>
+              <h3>Sirindhorn International Institute of Technology, Thammasat University</h3>
+              <div class="meta">Doctor of Philosophy (Engineering and Technology) • Thailand</div>
+            </div>
+            <div class="date">Current</div>
+          </div>
+          <ul>
+            <li>Research Area: Medical Image Processing</li>
+            <li>Dissertation Topic: Human Blastocyst Analysis / Multi-scale artificial life for segmentation-related medical imaging work</li>
+          </ul>
+        </div>
+
+        <div class="card timeline-item">
+          <div class="timeline-top">
+            <div>
+              <h3>Nepal College of Information Technology, Pokhara University</h3>
+              <div class="meta">Master of Computer Engineering • Nepal</div>
+            </div>
+            <div class="date">Completed</div>
+          </div>
+          <ul>
+            <li>Dissertation: Performance Analysis of Adam Optimization on Introducing Energy Index</li>
+          </ul>
+        </div>
+
+        <div class="card timeline-item">
+          <div class="timeline-top">
+            <div>
+              <h3>Pokhara Engineering College, Pokhara University</h3>
+              <div class="meta">Bachelor of Computer Engineering • Nepal</div>
+            </div>
+            <div class="date">Completed</div>
+          </div>
+          <ul>
+            <li>Major Project: Video On Demand — sending SMS to the IVR system to play the requested video</li>
+          </ul>
+        </div>
+
+        <div class="card timeline-item">
+          <div class="timeline-top">
+            <div>
+              <h3>New Galaxy Higher Secondary School</h3>
+              <div class="meta">Higher Secondary Education • Nepal</div>
+            </div>
+            <div class="date">Completed</div>
+          </div>
+          <ul>
+            <li>Stream: Physics</li>
+          </ul>
+        </div>
+
+        <div class="card timeline-item">
+          <div class="timeline-top">
+            <div>
+              <h3>Morning Star Secondary School</h3>
+              <div class="meta">Secondary Education • Nepal</div>
+            </div>
+            <div class="date">Completed</div>
+          </div>
         </div>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
+
+  <section class="section" id="awards">
+    <div class="container">
+      <h2 class="section-title">Awards and Scholarships</h2>
+      <p class="section-subtitle">Selected recognitions, scholarships, and competition achievements.</p>
+
+      <div class="grid">
+        <div class="card info-card">
+          <h3>Excellent Foreign Scholarship</h3>
+          <p>Sirindhorn International Institute of Technology, Thammasat University</p>
+          <p>2024–2026</p>
+        </div>
+
+        <div class="card info-card">
+          <h3>Best Research Paper Award</h3>
+          <p>2nd International Conference on Innovative Practices in Technology and Management, Amity University, Noida, India</p>
+          <p>Paper: Image Steganography Approach Based Ant Colony Optimization With Triangular Chaotic Map</p>
+        </div>
+
+        <div class="card info-card">
+          <h3>First Position in Software Competition</h3>
+          <p>5th Pokhara Engineering Exhibition</p>
+          <p>Project: Video on Demand</p>
+        </div>
+
+        <div class="card info-card">
+          <h3>First Position in Software Competition</h3>
+          <p>GCES IT Mahotsav 2067</p>
+          <p>Project: Cheque Recorder</p>
+        </div>
+
+        <div class="card info-card">
+          <h3>Academic Scholarship</h3>
+          <p>New Galaxy Higher Secondary School</p>
+          <p>100% tuition scholarship on admission</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="experience">
+    <div class="container">
+      <h2 class="section-title">Academic Experience</h2>
+      <p class="section-subtitle">Teaching, supervision, and research-oriented roles.</p>
+
+      <div class="timeline">
+        <div class="card timeline-item">
+          <div class="timeline-top">
+            <div>
+              <h3>Teaching Assistant</h3>
+              <div class="meta">Sirindhorn International Institute of Technology, Thammasat University • Thailand</div>
+            </div>
+            <div class="date">Aug 2024 – Present</div>
+          </div>
+          <ul>
+            <li>Supports undergraduate teaching in database management systems, computer graphics, Python, and data structures.</li>
+          </ul>
+        </div>
+
+        <div class="card timeline-item">
+          <div class="timeline-top">
+            <div>
+              <h3>Senior Lecturer | Research Committee Member</h3>
+              <div class="meta">Samriddhi College • Nepal</div>
+            </div>
+            <div class="date">Sep 2015 – Dec 2023</div>
+          </div>
+          <ul>
+            <li>Taught programming, artificial intelligence, and image processing.</li>
+            <li>Motivated and guided students toward research activities.</li>
+          </ul>
+        </div>
+
+        <div class="card timeline-item">
+          <div class="timeline-top">
+            <div>
+              <h3>Adjunct Faculty</h3>
+              <div class="meta">Phoenix College of Management • Nepal</div>
+            </div>
+            <div class="date">Jun 2021 – Dec 2023</div>
+          </div>
+          <ul>
+            <li>Taught Data Warehousing and Data Mining at graduate level.</li>
+            <li>Supervised students in thesis work.</li>
+          </ul>
+        </div>
+
+        <div class="card timeline-item">
+          <div class="timeline-top">
+            <div>
+              <h3>Head of Department</h3>
+              <div class="meta">Morning Star Higher Secondary School • Nepal</div>
+            </div>
+            <div class="date">Apr 2012 – Jul 2015</div>
+          </div>
+          <ul>
+            <li>Guided teaching-learning activities in the computer department.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="publications">
+    <div class="container">
+      <h2 class="section-title">Selected Publications</h2>
+      <p class="section-subtitle">Journal articles, conference papers, and book chapter highlights.</p>
+
+      <div class="pub-list">
+        <div class="card pub-item">
+          <span class="pub-label">Journal</span>
+          <h3>NMT-UNet: Neural Architecture Search for Multi-Task UNet to Segment Human Blastocyst Components</h3>
+          <p>Mohan Bhandari, Stanislav S. Makhanov. IEEE Access, 2026. DOI: 10.1109/ACCESS.2026.3672466</p>
+        </div>
+
+        <div class="card pub-item">
+          <span class="pub-label">Journal</span>
+          <h3>Interpreting decisions of lightweight CNN for glitch classification in time frequency images: Enhancing black-hole merger detection in O1 and O2 runs</h3>
+          <p>Mohan Bhandari*, Aakash Thapa, Loknath Regmi, Suman Sharma, Prakash Paudel, Sanjeeb Prasad Panday. Physics of the Dark Universe, 2025. DOI: 10.1016/j.dark.2025.101914</p>
+        </div>
+
+        <div class="card pub-item">
+          <span class="pub-label">Journal</span>
+          <h3>Enhanced Ulcer Detection Using GAN-Augmented Image Processing and Convolutional Neural Networks</h3>
+          <p>Mohan Bhandari*, Darshan Bhusal, Kishor Singh, Bishnu Bashyal. International Journal on Engineering Technology, 2024. DOI: 10.3126/injet.v2i1.72489</p>
+        </div>
+
+        <div class="card pub-item">
+          <span class="pub-label">Journal</span>
+          <h3>Explanation-Driven HCI Model to Examine the Mini-Mental State for Alzheimer's Disease</h3>
+          <p>Loveleen Gaur, Mohan Bhandari, and co-authors. ACM Transactions on Multimedia Computing, Communications, and Applications, 2023. DOI: 10.1145/3527174</p>
+        </div>
+
+        <div class="card pub-item">
+          <span class="pub-label">Journal</span>
+          <h3>Robust Light Weight Deep Learning Model to Augur Deep Features of Renal Abnormalities: Cyst, Stone and Tumor</h3>
+          <p>Mohan Bhandari, Pratheepan Yogarajah, Muthu Kavitha, Joan Condell. Applied Sciences, 2023. DOI: 10.3390/app13053125</p>
+        </div>
+
+        <div class="card pub-item">
+          <span class="pub-label">Journal</span>
+          <h3>Explanatory classification of CXR images into COVID-19, Pneumonia and Tuberculosis using deep learning and XAI</h3>
+          <p>Mohan Bhandari, Tej Bahadur Shahi, Birat Siku, Arjun Neupane. Computers in Biology and Medicine, 2022. DOI: 10.1016/j.compbiomed.2022.106156</p>
+        </div>
+
+        <div class="card pub-item">
+          <span class="pub-label">Conference</span>
+          <h3>Vision Language Model for Clinical Decision Support System</h3>
+          <p>Mohan Bhandari, Smriti KC, Anam Afaq, Loveleen Gaur. ICICSET 2025. DOI: 10.65091/icicset.v2i1.11</p>
+        </div>
+
+        <div class="card pub-item">
+          <span class="pub-label">Conference</span>
+          <h3>Image Steganography Approach Based Ant Colony Optimization With Triangular Chaotic Map</h3>
+          <p>Mohan Bhandari, Subash Pandey, Chandra Prakash Bhatta, Sanjeev Pandey. ICIPTM 2022. DOI: 10.1109/ICIPTM54933.2022.9753917</p>
+        </div>
+
+        <div class="card pub-item">
+          <span class="pub-label">Book Chapter</span>
+          <h3>Development of Image Translating Model to Counter Adversarial Attacks</h3>
+          <p>Loveleen Gaur, Mohan Bhandari, Tanvi Razdan. In Deepfakes, CRC Press, 2022. DOI: 10.1201/9781003231493-5</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="editorial">
+    <div class="container">
+      <h2 class="section-title">Editorial and Peer Review</h2>
+      <p class="section-subtitle">Editorial role, review work, and professional academic contribution.</p>
+
+      <div class="grid">
+        <div class="card info-card">
+          <h3>Associate Editor / Review Editor</h3>
+          <p>Frontiers in Digital Health</p>
+          <p>Health Informatics section</p>
+        </div>
+
+        <div class="card info-card">
+          <h3>Editorial Article</h3>
+          <p>Artificial Intelligence, Transparency and Importance of Explainable AI</p>
+          <p>Medicon Engineering Themes, 2023</p>
+        </div>
+
+        <div class="card info-card">
+          <h3>Peer Review Contributions</h3>
+          <p>Reviewer for IEEE Access, Computers in Biology and Medicine, Artificial Intelligence in Agriculture, Frontiers journals, Scientific Reports, Medicon, and other conferences and journals.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="datasets">
+    <div class="container">
+      <h2 class="section-title">Dataset Contributions</h2>
+      <p class="section-subtitle">Public dataset work and community-facing resources.</p>
+
+      <div class="grid">
+        <div class="card info-card">
+          <h3>Sanskrit Image Captioning</h3>
+          <p>Kaggle dataset, 2025</p>
+        </div>
+
+        <div class="card info-card">
+          <h3>Test Images to UTSC_SmokeRS Dataset</h3>
+          <p>Kaggle dataset, 2025</p>
+        </div>
+
+        <div class="card info-card">
+          <h3>Nepali Handwriting Characters</h3>
+          <p>Kaggle dataset, 2023</p>
+        </div>
+
+        <div class="card info-card">
+          <h3>Nepali Hate Speech Collection</h3>
+          <p>Kaggle dataset, 2023</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="skills">
+    <div class="container">
+      <h2 class="section-title">Skills</h2>
+      <p class="section-subtitle">Technical, research, and applied competencies.</p>
+
+      <div class="skills-grid">
+        <div class="card skill-card">
+          <h3>Technical Skills</h3>
+          <ul>
+            <li>Python, C#</li>
+            <li>MySQL, MSSQL, SQLite, Firebase</li>
+            <li>Git and research-oriented development workflows</li>
+            <li>Machine Learning and Deep Learning</li>
+            <li>Vision-Language Models</li>
+            <li>Neural Architecture Search</li>
+          </ul>
+        </div>
+
+        <div class="card skill-card">
+          <h3>Research Skills</h3>
+          <ul>
+            <li>Medical Image Processing</li>
+            <li>Explainable AI</li>
+            <li>Biomedical Image Analysis</li>
+            <li>Academic Writing and Publication</li>
+            <li>Research Supervision</li>
+            <li>AI for healthcare and applied computer vision</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="references">
+    <div class="container">
+      <h2 class="section-title">References</h2>
+      <p class="section-subtitle">Academic and professional referees listed in the profile materials.</p>
+
+      <div class="grid">
+        <div class="card info-card">
+          <h3>Stanislav S. Makhanov (Ph.D)</h3>
+          <p>Full Professor, SIIT, Thammasat University, Thailand</p>
+          <p>Relationship: PhD Advisor</p>
+        </div>
+
+        <div class="card info-card">
+          <h3>Pratheepan Yogarajah (Ph.D)</h3>
+          <p>Lecturer, Computer Science, Ulster University, UK</p>
+          <p>Relationship: Research Co-Author</p>
+        </div>
+
+        <div class="card info-card">
+          <h3>Loveleen Gaur (Ph.D)</h3>
+          <p>Full Professor, Program Director (AI & Data Analytics), Amity University, India</p>
+          <p>Relationship: Research Co-Author</p>
+        </div>
+
+        <div class="card info-card">
+          <h3>Pramod Parajuli</h3>
+          <p>Chief Innovation Officer, Nepal Payment</p>
+          <p>Relationship: Master Thesis Supervisor</p>
+        </div>
+
+        <div class="card info-card">
+          <h3>Saroj Shakya</h3>
+          <p>Full Professor, Nepal College of Information and Technology</p>
+          <p>Relationship: Masters' Coordinator</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <footer>
     <div class="container">
-      © Mohan Bhandari
-    </div>
-    <div class="container">
-      Last update on 18/04/2026
+      <p>© 2026 Mohan Bhandari. All rights reserved.</p>
+      <p>Academic Profile Website</p>
     </div>
   </footer>
+
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+      });
+    });
+  </script>
 </body>
 </html>
