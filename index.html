@@ -29,7 +29,7 @@
 
         .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
 
-        /* Navigation */
+        /* Navigation & Dropdown */
         header {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
@@ -41,9 +41,48 @@
         }
         nav { display: flex; justify-content: space-between; align-items: center; height: 70px; }
         .logo { font-weight: 800; font-size: 1.1rem; color: var(--primary); text-decoration: none; letter-spacing: 1px; }
-        .nav-links { display: flex; list-style: none; gap: 2rem; }
-        .nav-links a { text-decoration: none; color: var(--text-main); font-weight: 500; font-size: 0.85rem; transition: 0.3s; }
-        .nav-links a:hover { color: var(--accent); }
+        
+        .nav-links { display: flex; list-style: none; gap: 1rem; align-items: center; }
+        .nav-links > li { position: relative; }
+        .nav-links a { 
+            text-decoration: none; 
+            color: var(--text-main); 
+            font-weight: 500; 
+            font-size: 0.85rem; 
+            padding: 10px 15px;
+            border-radius: 6px;
+            transition: 0.3s; 
+        }
+        .nav-links a:hover { color: var(--accent); background: var(--accent-light); }
+
+        /* Dropdown Logic */
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+            width: 180px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: 0.3s;
+            list-style: none;
+            padding: 10px 0;
+        }
+        .nav-links li:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        .dropdown-menu li a {
+            display: block;
+            padding: 8px 20px;
+            width: 100%;
+            border-radius: 0;
+        }
 
         /* Hero Section */
         .hero { padding: 160px 0 80px; background: white; border-bottom: 1px solid var(--border); }
@@ -54,57 +93,30 @@
         .contact-info div { display: flex; align-items: center; gap: 10px; }
         .contact-info i { color: var(--accent); font-size: 1rem; }
 
-        /* Sidebar Identifiers */
-        .sidebar-card { background: var(--bg-body); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border); }
-        .sidebar-card h4 { font-size: 0.75rem; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; letter-spacing: 1px; }
-        .sidebar-card ul { list-style: none; font-size: 0.85rem; }
-        .sidebar-card li { margin-bottom: 10px; display: flex; justify-content: space-between; border-bottom: 1px solid #eef2f6; padding-bottom: 5px; }
-        .sidebar-card strong { color: var(--text-dark); }
-
         /* Sections */
         section { padding: 100px 0; }
         .section-title { font-size: 1.75rem; font-weight: 800; color: var(--text-dark); margin-bottom: 3rem; display: flex; align-items: center; gap: 20px; }
         .section-title::after { content: ""; flex: 1; height: 1px; background: var(--border); }
 
-        /* Timeline Items */
-        .timeline-item { background: white; padding: 2rem; border-radius: 12px; border: 1px solid var(--border); margin-bottom: 1.5rem; transition: 0.3s; }
-        .timeline-item:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,0,0,0.04); }
-        .timeline-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
-        .timeline-header h3 { font-size: 1.2rem; color: var(--text-dark); }
-        .date-badge { font-size: 0.7rem; font-weight: 700; color: var(--accent); background: var(--accent-light); padding: 5px 14px; border-radius: 30px; }
-        .timeline-sub { color: var(--accent); font-weight: 600; font-size: 0.95rem; margin-bottom: 0.75rem; }
-
-        /* Publications */
-        .pub-item { background: white; padding: 2rem; border-radius: 12px; border: 1px solid var(--border); margin-bottom: 1rem; }
+        /* Publications Content */
+        .pub-item { background: white; padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border); margin-bottom: 1.2rem; transition: 0.3s; }
+        .pub-item:hover { border-color: var(--accent); transform: translateX(5px); }
         .pub-tag { font-size: 0.65rem; font-weight: 800; text-transform: uppercase; padding: 4px 10px; border-radius: 4px; margin-bottom: 12px; display: inline-block; }
         .tag-j { background: #dcfce7; color: #166534; }
         .tag-c { background: #fef9c3; color: #854d0e; }
         .tag-s { background: #ede9fe; color: #5b21b6; }
-        .pub-title { font-size: 1.1rem; font-weight: 700; color: var(--text-dark); text-decoration: none; display: block; margin-bottom: 8px; line-height: 1.4; }
-        .pub-title:hover { color: var(--accent); }
+        .pub-title { font-size: 1.05rem; font-weight: 700; color: var(--text-dark); text-decoration: none; display: block; margin-bottom: 8px; }
         .pub-metrics { margin-top: 15px; display: flex; gap: 20px; font-size: 0.8rem; font-weight: 700; color: var(--accent); }
 
-        /* Grid Layouts */
-        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
-        .card { background: white; padding: 2rem; border-radius: 12px; border: 1px solid var(--border); transition: 0.3s; }
-        .card:hover { border-color: var(--accent); }
-        .card h3 { font-size: 1.1rem; margin-bottom: 1rem; color: var(--text-dark); }
-        .card p { font-size: 0.9rem; margin-bottom: 1.5rem; }
-
-        /* Skills */
-        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; }
-        .skill-group h4 { font-size: 0.8rem; text-transform: uppercase; color: var(--accent); margin-bottom: 1.5rem; letter-spacing: 1px; }
-        .skill-item { display: flex; justify-content: space-between; font-size: 0.9rem; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+        .timeline-item { background: white; padding: 2rem; border-radius: 12px; border: 1px solid var(--border); margin-bottom: 1.5rem; }
+        .timeline-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
+        .date-badge { font-size: 0.7rem; font-weight: 700; color: var(--accent); background: var(--accent-light); padding: 5px 14px; border-radius: 30px; }
 
         footer { background: var(--primary); color: white; padding: 50px 0; text-align: center; }
-        .social-links { display: flex; justify-content: center; gap: 2.5rem; margin-bottom: 2rem; }
-        .social-links a { color: white; font-size: 1.5rem; opacity: 0.7; transition: 0.3s; }
-        .social-links a:hover { opacity: 1; transform: translateY(-3px); }
 
         @media (max-width: 968px) {
             .hero-grid { grid-template-columns: 1fr; }
-            .hero-text h1 { font-size: 2.5rem; }
-            .nav-links { display: none; }
+            .nav-links { display: none; } /* Mobile users would usually use a hamburger menu */
         }
     </style>
 </head>
@@ -117,7 +129,14 @@
                 <ul class="nav-links">
                     <li><a href="#about">About</a></li>
                     <li><a href="#education">Education</a></li>
-                    <li><a href="#publications">Publications</a></li>
+                    <li>
+                        <a href="#publications">Publications <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#journals">Journals</a></li>
+                            <li><a href="#conferences">Conferences</a></li>
+                            <li><a href="#supervised">Supervised</a></li>
+                        </ul>
+                    </li>
                     <li><a href="#datasets">Datasets</a></li>
                     <li><a href="#skills">Skills</a></li>
                 </ul>
@@ -130,113 +149,77 @@
             <div class="hero-grid">
                 <div class="hero-text">
                     <h1>Mohan Bhandari</h1>
-                    <p><strong>PhD Scholar</strong> at SIIT, Thammasat University. Bridging the gap between <strong>Deep Learning architectures</strong> and <strong>Clinical Diagnostics</strong> through Explainable AI.</p>
-                    <p style="color: var(--text-main); font-size: 1rem;">Specializing in Medical Image Processing, Vision-Language Models (VLM), and Automated Embryological Assessment.</p>
-                    
+                    <p><strong>PhD Scholar</strong> at SIIT, Thammasat University. Specializing in <strong>Medical AI</strong>, <strong>NAS</strong>, and <strong>Explainable Deep Learning</strong>.</p>
                     <div class="contact-info">
-                        <div><i class="fas fa-map-marker-alt"></i> Pathum Thani, Thailand</div>
                         <div><i class="fas fa-envelope"></i> mail2mohanbhandari@gmail.com</div>
                         <div><i class="fas fa-globe"></i> mohanbhandari.github.io</div>
-                        <div><i class="fas fa-certificate"></i> NEC Reg: 3824 (Computer)</div>
+                        <div><i class="fas fa-id-card"></i> NEC Reg: 3824</div>
                     </div>
                 </div>
-                <div class="sidebar-links">
-                    <div class="sidebar-card">
-                        <h4>Academic Profiles</h4>
-                        <ul>
-                            <li><strong>ORCiD</strong> 0000-0003-2551-3163</li>
-                            <li><strong>Scopus</strong> 57645591300</li>
-                            <li><strong>WOS</strong> KVC-3085-2024</li>
-                            <li><strong>ScholarGPS</strong> 178526053903</li>
-                        </ul>
-                    </div>
+                <div style="background: var(--accent-light); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--accent);">
+                    <h4 style="font-size: 0.7rem; text-transform: uppercase; color: var(--accent); margin-bottom: 10px;">Identifiers</h4>
+                    <p style="font-size: 0.85rem; line-height: 2;">
+                        ORCiD: 0000-0003-2551-3163<br>
+                        Scopus: 57645591300<br>
+                        ScholarGPS: 178526053903
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="education">
+    <section id="journals">
         <div class="container">
-            <h2 class="section-title">Education</h2>
-            <div class="timeline-item">
-                <div class="timeline-header">
-                    <h3>PhD in Medical Image Processing</h3>
-                    <span class="date-badge">2024 — PRESENT</span>
-                </div>
-                <div class="timeline-sub">SIIT, Thammasat University, Thailand</div>
-                <p>Excellent Foreign Scholarship (EFS) recipient. Focused on Multi-Scale Artificial Life for Human Blastocyst Segmentation.</p>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-header">
-                    <h3>Master of Computer Engineering</h3>
-                    <span class="date-badge">2017 — 2019</span>
-                </div>
-                <div class="timeline-sub">Nepal College of Information Technology (NCIT)</div>
-                <p>Research: Performance Analysis of Adam Optimization on introducing Energy Index.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="publications" style="background: white;">
-        <div class="container">
-            <h2 class="section-title">Selected Publications</h2>
+            <h2 class="section-title">Journal Publications</h2>
             
             <div class="pub-item">
                 <span class="pub-tag tag-j">Journal J.11</span>
-                <a href="#" class="pub-title">NMT-UNet: Neural Architecture Search for Multi-Task UNet to Segment Human Blastocyst Components</a>
+                <a href="https://doi.org/10.1109/ACCESS.2026.3672466" class="pub-title">NMT-UNet: Neural Architecture Search for Multi-Task UNet to Segment Human Blastocyst Components</a>
                 <p><em>IEEE Access (2026)</em> | Mohan Bhandari, Stanislav S. Makhanov</p>
-                <div class="pub-metrics">
-                    <span><i class="fas fa-chart-line"></i> Q1</span>
-                    <span><i class="fas fa-star"></i> IF: 3.6</span>
-                </div>
+                <div class="pub-metrics"><span>Q1</span> <span>IF: 3.6</span></div>
+            </div>
+
+            <div class="pub-item">
+                <span class="pub-tag tag-j">Journal J.10</span>
+                <a href="https://doi.org/10.1016/j.dark.2025.101914" class="pub-title">Interpreting decisions of lightweight CNN for glitch classification in time frequency images</a>
+                <p><em>Physics of the Dark Universe (2025)</em> | Mohan Bhandari*, A. Thapa, et al.</p>
+                <div class="pub-metrics"><span>Q1</span> <span>IF: 6.4</span></div>
             </div>
 
             <div class="pub-item">
                 <span class="pub-tag tag-j">Journal J.3</span>
-                <a href="#" class="pub-title">Explanatory classification of CXR images into COVID-19, Pneumonia and Tuberculosis using deep learning and XAI</a>
-                <p><em>Computers in Biology and Medicine (2022)</em> | Mohan Bhandari, et al.</p>
-                <div class="pub-metrics">
-                    <span><i class="fas fa-chart-line"></i> Q1</span>
-                    <span><i class="fas fa-star"></i> IF: 7.0</span>
-                </div>
+                <a href="https://doi.org/10.1016/j.compbiomed.2022.106156" class="pub-title">Explanatory classification of CXR images into COVID-19, Pneumonia and Tuberculosis using deep learning and XAI</a>
+                <p><em>Computers in Biology and Medicine (2022)</em> | Mohan Bhandari, T.B. Shahi, et al.</p>
+                <div class="pub-metrics"><span>Q1</span> <span>IF: 7.0</span></div>
             </div>
         </div>
     </section>
 
-    <section id="datasets">
+    <section id="conferences" style="background: white;">
         <div class="container">
-            <h2 class="section-title">Open Datasets</h2>
-            <div class="grid-3">
-                <div class="card">
-                    <h3>Sanskrit Image Captioning</h3>
-                    <p>First-of-its-kind Sanskrit captions for the Flickr dataset, designed for Transformer research.</p>
-                    <a href="#" style="color: var(--accent); font-weight: 700; text-decoration: none; font-size: 0.8rem;">KAGGLE DATASET →</a>
-                </div>
-                <div class="card">
-                    <h3>Nepali Hate Speech</h3>
-                    <p>Comprehensive corpus of offensive language categorized into 18 linguistic types.</p>
-                    <a href="#" style="color: var(--accent); font-weight: 700; text-decoration: none; font-size: 0.8rem;">KAGGLE DATASET →</a>
-                </div>
+            <h2 class="section-title">Conferences</h2>
+            <div class="pub-item">
+                <span class="pub-tag tag-c">Conference</span>
+                <a href="#" class="pub-title">Automated Embryological Assessment using CNN-LSTM and VLM</a>
+                <p>Focused on Gardner grading systems in reproductive medicine.</p>
             </div>
         </div>
     </section>
 
-    <section id="skills" style="background: white;">
+    <section id="supervised">
         <div class="container">
-            <h2 class="section-title">Technical Expertise</h2>
-            <div class="skills-grid">
-                <div class="skill-group">
-                    <h4>Core AI</h4>
-                    <div class="skill-item"><span>Medical Imaging</span> <span>Expert</span></div>
-                    <div class="skill-item"><span>Explainable AI</span> <span>Expert</span></div>
-                    <div class="skill-item"><span>NAS / VLMs</span> <span>Advanced</span></div>
-                </div>
-                <div class="skill-group">
-                    <h4>Development</h4>
-                    <div class="skill-item"><span>Python (PyTorch/TF)</span> <span>90%</span></div>
-                    <div class="skill-item"><span>C# / .NET</span> <span>85%</span></div>
-                    <div class="skill-item"><span>LaTeX</span> <span>95%</span></div>
-                </div>
+            <h2 class="section-title">Supervised Research</h2>
+            
+            <div class="pub-item">
+                <span class="pub-tag tag-s">Supervised J.8</span>
+                <a href="https://doi.org/10.3126/injet.v3i1.87023" class="pub-title">Beyond Accuracy and Classification: XAI Driven Interpretability in Cervical Cancer</a>
+                <p><em>InJET (2025)</em> | Saugat Kafle, Prakash Paudel, Mohan Bhandari*</p>
+            </div>
+
+            <div class="pub-item">
+                <span class="pub-tag tag-s">Supervised J.6</span>
+                <a href="https://doi.org/10.61440/JBES.2024.v1.47" class="pub-title">Revolutionizing Currency Security: A Yolov8-Based Approach for Automated Detection of Counterfeit Nepali Banknotes</a>
+                <p><em>JBES (2024)</em> | Santosh Giri, et al., Mohan Bhandari*</p>
             </div>
         </div>
     </section>
@@ -246,9 +229,8 @@
             <div class="social-links">
                 <a href="#"><i class="fab fa-github"></i></a>
                 <a href="#"><i class="fab fa-linkedin"></i></a>
-                <a href="#"><i class="fab fa-medium"></i></a>
             </div>
-            <p>&copy; 2026 Mohan Bhandari | PhD Scholar | SIIT Thammasat University</p>
+            <p>&copy; 2026 Mohan Bhandari | PhD Scholar | Verified April 2026</p>
         </div>
     </footer>
 
