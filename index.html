@@ -3,1349 +3,407 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohan Bhandari - Curriculum Vitae</title>
+    <title>Mohan Bhandari | PhD Researcher & AI Specialist</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary: #1e3a8a; /* Deep Navy */
+            --accent: #3b82f6;  /* Academic Blue */
+            --text-main: #1f2937;
+            --text-muted: #6b7280;
+            --bg-light: #f8fafc;
+            --white: #ffffff;
+            --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', sans-serif;
         }
-        
-        :root {
-            --primary: #4682b4; /* Steel blue */
-            --secondary: #add8e6; /* Light blue */
-            --accent: #87ceeb; /* Sky blue */
-            --light: #f0f8ff; /* Alice blue */
-            --dark: #333;
-            --gray: #767676;
-        }
-        
-        html {
-            scroll-behavior: smooth;
-        }
-        
+
         body {
-            line-height: 1.6;
-            color: var(--dark);
-            background-color: var(--light);
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            line-height: 1.7;
         }
-        
+
         .container {
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 0 15px;
+            padding: 0 2rem;
         }
-        
-        section {
-            padding: 60px 0;
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 10px 25px;
-            background-color: var(--primary);
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            font-size: 0.9rem;
-        }
-        
-        .btn:hover {
-            background-color: var(--secondary);
-            transform: translateY(-3px);
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 40px;
-            font-size: 2rem;
-            color: var(--primary);
-            position: relative;
-        }
-        
-        .section-title::after {
-            content: '';
-            width: 80px;
-            height: 3px;
-            background-color: var(--accent);
-            display: block;
-            margin: 8px auto 0;
-            border-radius: 2px;
-        }
-        
-        /* Header and Navigation Styles */
+
+        /* Navigation */
         header {
-            background-color: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
         }
-        
+
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 0;
+            height: 70px;
         }
-        
+
         .logo {
-            font-size: 1.5rem;
             font-weight: 700;
+            font-size: 1.2rem;
             color: var(--primary);
             text-decoration: none;
+            letter-spacing: -0.5px;
         }
-        
+
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 10px;
+            gap: 2rem;
         }
-        
-        .nav-links li {
-            position: relative;
-        }
-        
+
         .nav-links a {
             text-decoration: none;
-            color: var(--dark);
+            color: var(--text-main);
             font-weight: 500;
             font-size: 0.9rem;
-            padding: 8px 12px;
-            transition: color 0.3s ease;
+            transition: color 0.3s;
         }
-        
+
         .nav-links a:hover {
-            color: var(--primary);
+            color: var(--accent);
         }
-        
-        /* Dropdown Menu for Subheadings */
-        .dropdown {
-            position: relative;
-        }
-        
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: white;
-            min-width: 180px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
-            z-index: 1;
-            top: 100%;
-            left: 0;
-        }
-        
-        .dropdown-content a {
-            display: block;
-            padding: 8px 12px;
-            color: var(--dark);
-            text-decoration: none;
-            font-size: 0.85rem;
-        }
-        
-        .dropdown-content a:hover {
-            background-color: var(--light);
-            color: var(--primary);
-        }
-        
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-        
-        .dropdown-title {
-            font-size: 0.75rem;
-            color: var(--gray);
-            padding: 8px 12px;
-            text-transform: uppercase;
-            font-weight: bold;
-        }
-        
+
         /* Hero Section */
         .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            background: linear-gradient(135deg, #e6f3fa 0%, #add8e6 100%);
-            margin-top: 60px;
-        }
-        
-        .hero-content {
+            padding: 160px 0 100px;
+            background: radial-gradient(circle at top right, #eff6ff, transparent);
             text-align: center;
-            max-width: 700px;
-            margin: 0 auto;
-            padding: 0 15px;
         }
-        
+
         .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-            color: var(--dark);
+            font-size: 3.5rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 1rem;
+            color: #0f172a;
         }
-        
+
         .hero p {
-            font-size: 1rem;
-            margin-bottom: 25px;
-            color: var(--gray);
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto 2rem;
         }
-        
-        /* About Section */
-        .about-content {
+
+        .hero-stats {
             display: flex;
-            align-items: flex-start;
-            gap: 30px;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 3rem;
         }
-        
-        .about-text {
-            flex: 1;
-            background-color: white;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
-        }
-        
-        .about-image {
-            flex: 0 0 20%;
-            text-align: center;
-        }
-        
-        .about-image img {
-            max-width: 100%;
-            border-radius: 50%;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-            border: 2px solid var(--primary);
-        }
-        
-        .about-text dl {
-            margin: 0;
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 8px;
-            font-size: 0.9rem;
-        }
-        
-        .about-text dt {
-            font-weight: bold;
-            color: var(--primary);
-            margin-top: 8px;
-        }
-        
-        .about-text dd {
-            margin-bottom: 8px;
-        }
-        
-        .summary ul {
-            list-style-type: disc;
-            padding-left: 20px;
-            margin-top: 15px;
-            font-size: 0.9rem;
-        }
-        
-        /* Card Styles for Sections */
-        .card-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 20px;
-        }
-        
-        .card {
-            background-color: white;
-            border-radius: 8px;
-            padding: 15px;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease;
-        }
-        
-        .card:hover {
-            transform: translateY(-8px);
-        }
-        
-        .card i {
-            font-size: 1.8rem;
-            color: var(--primary);
-            margin-bottom: 12px;
-        }
-        
-        .card h3 {
-            color: var(--primary);
-            margin-bottom: 12px;
-            font-size: 1.2rem;
-        }
-        
-        .card p {
-            color: var(--gray);
-            font-size: 0.9rem;
-        }
-        
-        .publication {
-            margin-bottom: 12px;
-            padding: 12px;
-            background-color: white;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-        }
-        
-        .publication .title {
-            font-weight: bold;
-            color: var(--primary);
-            font-size: 0.95rem;
-        }
-        
-        .publication .authors {
-            font-style: italic;
-            color: var(--gray);
-            font-size: 0.85rem;
-        }
-        
-        /* Skills Section */
-        .skills-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-            gap: 20px;
-        }
-        
-        .skill-category {
-            background-color: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease;
-        }
-        
-        .skill-category:hover {
-            transform: translateY(-5px);
-        }
-        
-        .skill-category h3 {
-            color: var(--primary);
-            margin-bottom: 15px;
-            text-align: center;
-            font-size: 1.1rem;
-        }
-        
-        .skill-item {
-            margin-bottom: 12px;
-        }
-        
-        .skill-name {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 5px;
-            font-size: 0.9rem;
-        }
-        
-        .skill-bar {
-            height: 8px;
-            background-color: #e9e9e9;
-            border-radius: 4px;
-        }
-        
-        .skill-level {
-            height: 100%;
-            background-color: var(--secondary);
-            border-radius: 4px;
-        }
-        
-        /* Footer */
-        footer {
-            background-color: var(--dark);
-            color: white;
-            padding: 30px 0;
-            text-align: center;
-        }
-        
-        .social-links {
-            margin-bottom: 15px;
-        }
-        
-        .social-links a {
-            color: white;
-            font-size: 1.3rem;
-            margin: 0 8px;
-            transition: color 0.3s ease;
-        }
-        
-        .social-links a:hover {
-            color: var(--secondary);
-        }
-        
-        /* Mobile Menu Toggle */
-        .menu-toggle {
-            display: none;
+
+        .stat-item b {
+            display: block;
             font-size: 1.5rem;
             color: var(--primary);
-            cursor: pointer;
         }
-        
-        /* Responsive Design */
+
+        .stat-item span {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+        }
+
+        /* Section Styling */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-header {
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        /* Cards & Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid #e5e7eb;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.05);
+            border-color: var(--accent);
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 2px 10px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .badge-q1 { background: #dcfce7; color: #166534; }
+        .badge-pub { background: #dbeafe; color: #1e40af; }
+
+        .card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+            color: #111827;
+        }
+
+        .card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .btn-link {
+            display: inline-flex;
+            align-items: center;
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--accent);
+            text-decoration: none;
+            gap: 5px;
+        }
+
+        /* About Section Custom */
+        .about-box {
+            background: var(--primary);
+            color: white;
+            padding: 3rem;
+            border-radius: 20px;
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-content h3 { color: #93c5fd; margin-bottom: 1rem; }
+
+        .contact-pill {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .pill {
+            background: rgba(255,255,255,0.1);
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            color: white;
+            text-decoration: none;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        /* Footer */
+        footer {
+            background: #0f172a;
+            color: #94a3b8;
+            padding: 4rem 0;
+            text-align: center;
+            border-top: 1px solid #1e293b;
+        }
+
+        .footer-socials {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-socials a {
+            color: white;
+            font-size: 1.2rem;
+            transition: opacity 0.3s;
+        }
+
         @media (max-width: 768px) {
-            .container {
-                padding: 0 10px;
-            }
-            
-            .section-title {
-                font-size: 1.8rem;
-            }
-            
-            .hero {
-                min-height: 80vh;
-                margin-top: 50px;
-            }
-            
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .hero p {
-                font-size: 0.9rem;
-            }
-            
-            .btn {
-                padding: 8px 20px;
-                font-size: 0.85rem;
-            }
-            
-            .menu-toggle {
-                display: block;
-            }
-            
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 60px;
-                left: 0;
-                width: 100%;
-                background-color: white;
-                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-                padding: 10px 0;
-            }
-            
-            .nav-links.active {
-                display: flex;
-            }
-            
-            .nav-links li {
-                width: 100%;
-                text-align: center;
-            }
-            
-            .nav-links a {
-                display: block;
-                padding: 10px;
-                font-size: 1rem;
-            }
-            
-            .dropdown-content {
-                position: static;
-                box-shadow: none;
-                background-color: var(--light);
-                width: 100%;
-                padding-left: 20px;
-            }
-            
-            .dropdown-content a {
-                text-align: left;
-                font-size: 0.9rem;
-            }
-            
-            .about-content {
-                flex-direction: column;
-                gap: 20px;
-            }
-            
-            .about-image {
-                flex: 0 0 100%;
-                max-width: 150px;
-                margin: 0 auto;
-            }
-            
-            .about-text dl {
-                grid-template-columns: 1fr;
-                font-size: 0.85rem;
-            }
-            
-            .card-grid {
-                grid-template-columns: 1fr;
-                gap: 15px;
-            }
-            
-            .card {
-                padding: 12px;
-            }
-            
-            .card h3 {
-                font-size: 1.1rem;
-            }
-            
-            .card p {
-                font-size: 0.85rem;
-            }
-            
-            .skills-container {
-                grid-template-columns: 1fr;
-                gap: 15px;
-            }
-            
-            .skill-category {
-                padding: 15px;
-            }
-            
-            .skill-category h3 {
-                font-size: 1rem;
-            }
-            
-            .skill-name {
-                font-size: 0.85rem;
-            }
-            
-            footer {
-                padding: 20px 0;
-            }
-            
-            footer p {
-                font-size: 0.85rem;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 1.8rem;
-            }
-            
-            .hero p {
-                font-size: 0.8rem;
-            }
-            
-            .section-title {
-                font-size: 1.5rem;
-            }
-            
-            .section-title::after {
-                width: 60px;
-            }
-            
-            .card h3 {
-                font-size: 1rem;
-            }
-            
-            .card p {
-                font-size: 0.8rem;
-            }
-            
-            .about-text dl {
-                font-size: 0.8rem;
-            }
-            
-            .summary ul {
-                font-size: 0.8rem;
-            }
-            
-            .btn {
-                padding: 7px 15px;
-                font-size: 0.8rem;
-            }
-            
-            .social-links a {
-                font-size: 1.2rem;
-                margin: 0 6px;
-            }
+            .hero h1 { font-size: 2.5rem; }
+            .nav-links { display: none; }
+            .about-box { flex-direction: column; text-align: center; }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
+
     <header>
         <div class="container">
             <nav>
-                <a href="#home" class="logo">Mohan Bhandari</a>
-                <i class="fas fa-bars menu-toggle"></i>
+                <a href="#" class="logo">MOHAN BHANDARI</a>
                 <ul class="nav-links">
-                    <li class="dropdown">
-                        <a href="#about">About</a>
-                        <div class="dropdown-content">
-                            <span class="dropdown-title"></span>
-                            <a href="#about">Profile</a>
-                        </div>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#education">Education</a>
-                        <div class="dropdown-content">
-                            <span class="dropdown-title"></span>
-                            <a href="#education">Degrees</a>
-                        </div>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#experience">Career</a>
-                        <div class="dropdown-content">
-                            <span class="dropdown-title"></span>
-                            <a href="#experience">Academic Experience</a>
-                            <a href="#awards">Awards & Scholarships</a>
-                        </div>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#publications">Research</a>
-                        <div class="dropdown-content">
-                            <span class="dropdown-title"></span>
-                            <a href="#publications">Publications</a>
-                            <a href="#book-chapter">Book Chapter</a>
-                            <a href="#supervised-works">Supervised Works</a>
-                            <a href="#datasets">Datasets</a>
-                        </div>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#editorial">Editorial Work</a>
-                        <div class="dropdown-content">
-                            <span class="dropdown-title"></span>
-                            <a href="#editorial">Editorial</a>
-                            <a href="#articles">Articles</a>
-                            <a href="#handling-editor">Handling Editor</a>
-                            <a href="#peer-review">Peer Review</a>
-                        </div>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#skills">Skills & Referees</a>
-                        <div class="dropdown-content">
-                            <span class="dropdown-title"></span>
-                            <a href="#skills">Skills</a>
-                            <a href="#referees">Referees</a>
-                        </div>
-                    </li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#publications">Research</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#datasets">Datasets</a></li>
+                    <li><a href="#editorial">Editorial</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
+    <section class="hero">
         <div class="container">
-            <div class="hero-content">
-                <h1>Hello, I'm <span style="color: var(--primary);">Mohan Bhandari</span></h1>
-                <p>PhD Scholar | AI Enthusiast | Biomedical Image Processing Expert</p>
-                <a href="#about" class="btn">Explore My Work</a>
+            <h1>Mohan Bhandari</h1>
+            <p>PhD Scholar specializing in Medical Image Processing, Explainable AI, and Neural Architecture Search.</p>
+            
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <b>15+</b>
+                    <span>Publications</span>
+                </div>
+                <div class="stat-item">
+                    <b>Q1/Q2</b>
+                    <span>Journal Rankings</span>
+                </div>
+                <div class="stat-item">
+                    <b>Associate</b>
+                    <span>Editor Role</span>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
+    <section id="about">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <dl>
-                        <dt><i class="fas fa-flag"></i> Nationality</dt>
-                        <dd>Nepalese</dd>
-                        <dt><i class="fas fa-graduation-cap"></i> Status</dt>
-                        <dd>PhD Student, SIIT, Thammasat University</dd>
-                        <dt><i class="fas fa-flask"></i> Fields</dt>
-                        <dd>Biomedical Image Processing, Explainable AI, Artificial Life</dd>
-                        <dt><i class="fas fa-language"></i> Languages</dt>
-                        <dd>Native: Nepali, English (IELTS: 6.5 - Candidate Number: 016710)</dd>
-                        <dt><i class="fas fa-home"></i> P. Address</dt>
-                        <dd>Dhikurpokhari, Annapurna-2, Nepal</dd>
-                        <dt><i class="fas fa-map-marker-alt"></i> T. Address</dt>
-                        <dd>Bangkadi, PathumThani, Thailand</dd>
-                        <dt><i class="fas fa-envelope"></i> Email</dt>
-                        <dd><a href="mailto:mail2mohanbhandari@gmail.com">mail2mohanbhandari@gmail.com</a></dd>
-                        <dt><i class="fab fa-github"></i> GitHub</dt>
-                        <dd><a href="https://github.com/MohanBhandari">https://github.com/MohanBhandari</a></dd>
-                        <dt><i class="fas fa-id-badge"></i> ORCiD</dt>
-                        <dd><a href="https://orcid.org/0000-0003-2551-3163">0000-0003-2551-3163</a></dd>
-                        <dt><i class="fas fa-globe"></i> Web of Science</dt>
-                        <dd><a href="https://www.webofscience.com/wos/author/record/KVC-3085-2024">KVC-3085-2024</a></dd>
-                        <dt><i class="fas fa-graduation-cap"></i> ScholarGPS®</dt>
-                        <dd><a href="https://scholargps.com/scholars/17852605390362/mohan-bhandari">17852605390362</a></dd>
-                        <dt><i class="fas fa-book"></i> Scopus</dt>
-                        <dd><a href="https://www.scopus.com/authid/detail.uri?authorId=57645591300">https://www.scopus.com/authid/detail.uri?authorId=57645591300</a></dd>
-                        <dt><i class="fas fa-university"></i> Google Scholar</dt>
-                        <dd><a href="https://scholar.google.com/citations?user=yH2GdSQAAAAJ&hl=en&oi=ao">https://scholar.google.com/citations?user=yH2GdSQAAAAJ&hl=en&oi=ao</a></dd>
-                        <dt><i class="fas fa-database"></i> dblp</dt>
-                        <dd><a href="https://dblp.dagstuhl.de/pid/320/9122.html">https://dblp.dagstuhl.de/pid/320/9122.html</a></dd>
-                        <dt><i class="fab fa-medium"></i> Medium</dt>
-                        <dd><a href="https://medium.com/@mail2mohanbhandari">https://medium.com/@mail2mohanbhandari</a></dd>
-                    </dl>
-                    <div class="summary">
-                        <h3>Summary</h3>
-                        <ul>
-                            <li>PhD Scholar in SIIT, Thammasat University, Thailand</li>
-                            <li>Artificial Intelligence enthusiast and freelancing machine learning developer with sound knowledge of machine learning algorithms, probability, explainable and interpretable AI with collaborative works with people around the globe (Harvard University, University of Tennessee, University of Texas, Ulster University, CQUniversity, Amity University and more)</li>
-                            <li>Lecturer in programming-related subjects like AI, ML, image processing, data mining, data science, data structure, C, C++, and DBMS for years in different colleges in Nepal.</li>
-                        </ul>
+            <div class="about-box">
+                <div class="about-content">
+                    <h3>Academic Profile</h3>
+                    <p>Doctoral researcher at Sirindhorn International Institute of Technology (SIIT), Thammasat University. My work bridges the gap between complex deep learning architectures and medical diagnostics, ensuring transparency through Explainable AI (XAI) and optimization via Neural Architecture Search (NAS).</p>
+                    
+                    <div class="contact-pill">
+                        <a href="mailto:mail2mohanbhandari@gmail.com" class="pill"><i class="fas fa-envelope"></i> Email</a>
+                        <a href="https://github.com/MohanBhandari" class="pill"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://orcid.org/0000-0003-2551-3163" class="pill"><i class="fas fa-id-badge"></i> ORCiD</a>
+                        <span class="pill"><i class="fas fa-certificate"></i> NEC Reg: 3824</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Education Section -->
-    <section id="education">
-        <div class="container">
-            <h2 class="section-title">Education</h2>
-            <div class="card-grid">
-                <div class="card">
-                    <i class="fas fa-graduation-cap"></i>
-                    <h3>PhD. (Medical Image Processing)</h3>
-                                        Sirindhorn International Institute of Technology, Thammasat University<br>
-                    Rangsit, Pathum Thani, Thailand<br>
-                    <strong>Dissertation Topic:</strong> <a href="https://www.siit.tu.ac.th/page_bx.php?cid=106&cno=57">Multi-Scale Artificial Life for Segmentation of Medical Images</a></p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-graduation-cap"></i>
-                    <h3>ME Computer</h3>
-                                       Nepal College of Information Technology, Pokhara University<br>
-                    Balkumari, Lalitpur, Nepal<br>
-                    <strong>Dissertation:</strong> <a href="https://github.com/MohanBhandari/EneryIndexIntroducedToAdam">Performance Analysis of Adam Optimization on Introducing Energy Index</a></p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-graduation-cap"></i>
-                    <h3>BE Computer</h3>
-                                       Pokhara Engineering College, Pokhara University<br>
-                    Phirke, Pokhara Municipality -8, Nepal<br>
-                    <strong>Major Project:</strong> Video On Demand <em>"Sending SMS to IVR system to play the requested video"</em></p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-graduation-cap"></i>
-                    <h3>Higher Education Board</h3>
-                                        New Galaxy Higher Secondary School<br>
-                    Nadipur, Pokhara Municipality, Nepal<br>
-                    <strong>Stream:</strong> Physics</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-graduation-cap"></i>
-                    <h3>School Leaving Certificate</h3>
-                    Morning Star Secondary School<br>
-                    Dhikurpokhari, Annapurna-2, Nepal<br>
-                    Nepal Government</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Awards and Scholarships Section -->
-    <section id="awards">
-        <div class="container">
-            <h2 class="section-title">Awards and Scholarships</h2>
-            <div class="card-grid">
-                <div class="card">
-                    <i class="fas fa-award"></i>
-                    <h3>Excellent Foreign Scholarship</h3>
-                    <p><strong>Jan 2024 - Running</strong><br>
-                    Sirindhorn International Institute of Technology, Thammasat University<br>
-                    Rangsit, Pathum Thani, Thailand</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-trophy"></i>
-                    <h3>Best Research Paper Award</h3>
-                    <p><strong>2022</strong><br>
-                    2nd International Conference on Innovative Practices in Technology and Management<br>
-                    Amity University, Noida, India<br>
-                    <strong>Paper:</strong> <em>Image Steganography Approach Based Ant Colony Optimization With Triangular Chaotic Map</em><br>
-                    <a href="https://drive.google.com/file/d/1OKjmHi2MLr34GP7jdg4BWhBzKuA8ZnXd/view?usp=sharing" class="btn">View Certificate</a></p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-medal"></i>
-                    <h3>First Position In Software Competition</h3>
-                    <p><strong>2011</strong><br>
-                    5<sup>th</sup> Pokhara Engineering Exhibition<br>
-                    Phirke, Pokhara Municipality -8, Nepal<br>
-                    <strong>Description:</strong> <em>First Position for the project "Video on Demand" with a major objective of broadcasting the request video automatically based on SMS</em><br>
-                    <a href="https://drive.google.com/file/d/12uSVnx2cSFOA8r2KmO90BYkgU5xg6aQO/view?usp=sharing" class="btn">View Certificate</a></p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-medal"></i>
-                    <h3>First Position In Software Competition</h3>
-                    <p><strong>2011</strong><br>
-                    GCES IT Mahotsav 2067<br>
-                    GCES, Lamachaur, Pokhara, Nepal<br>
-                    <strong>Description:</strong> <em>First Position for the project "Cheque Recorder" with a major objective of sending notification to cash the cheque on a particular date.</em><br>
-                    <a href="https://drive.google.com/file/d/1YVGHNTsUjCTOWtLy0eJxJB9Mp7Aibsdt/view?usp=sharing" class="btn">View Certificate</a></p>
-                </div>
-                
-                <div class="card">
-                    <i class="fas fa-award"></i>
-                    <h3>Academic Scholarship</h3>
-                    <p><strong>2003</strong><br>
-                    New Galaxy Higher Secondary School<br>
-                    Nadipur, Pokhara Municipality, Nepal<br>
-                    <strong>Description:</strong> <em>100% Scholarship in Tuition Fee On being admitted to Higher Secondary Education</em></p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Academic Experience Section -->
-    <section id="experience">
-        <div class="container">
-            <h2 class="section-title">Academic Experience</h2>
-            <div class="card-grid">
-                <div class="card">
-                    <i class="fas fa-chalkboard-teacher"></i>
-                    <h3>Senior Lecturer | Research Committee Member</h3>
-                    <p><strong>Sep 2015 - Dec 2023</strong><br>
-                    Samriddhi College<br>
-                    Lokanthali, Bhaktapur, Nepal<br>
-                    <strong>Description:</strong> <em>Giving Lecture class on programming, artificial intelligence and image processing like subjects. Motivating and helping students to adapt research activities</em></p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-university"></i>
-                    <h3>Adjunct Faculty</h3>
-                    <p><strong>Jun 2021 - Dec 2023</strong><br>
-                    Phoenix College of Management<br>
-                    Maitidevi, Kathmandu, Nepal<br>
-                    Master of Computer Science<br>
-                    <strong>Description:</strong> <em>Giving Lecture class on "Data Warehousing and Data Mining" and mentoring students on their thesis work as a supervisor</em></p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-school"></i>
-                    <h3>Head of Department</h3>
-                    <p><strong>April 2012 - July 2015</strong><br>
-                    Morning Star Higher Secondary School<br>
-                    Dhikurpokhari, Annapurna-2, Nepal<br>
-                    Computer Department<br>
-                    <strong>Description:</strong> <em>Tutoring Computer Science class for secondary students. Guiding and monitoring the teaching-learning activities within the computer department</em></p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Publications Section -->
     <section id="publications">
         <div class="container">
-            <h2 class="section-title">Publications</h2>
-            <h3 style="color: var(--primary); margin-bottom: 20px;">Journals</h3>
-            <div class="card-grid">
+            <div class="section-header">
+                <h2>Recent Publications</h2>
+            </div>
+            <div class="grid">
                 <div class="card">
-                    <i class="fas fa-book"></i>
+                    <span class="badge badge-q1">Q1 SJR 2025</span>
+                    <h3>IEEE Access (2026)</h3>
+                    <p>NMT-UNet: Neural Architecture Search for Multi-Task UNet to Segment Human Blastocyst Components.</p>
+                    <a href="https://doi.org/10.1109/ACCESS.2026.3672466" class="btn-link">View DOI <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="card">
+                    <span class="badge badge-q1">Q1 SJR 2025</span>
                     <h3>Physics of the Dark Universe (2025)</h3>
-                    <p><span class="title">Interpreting decisions of lightweight CNN for glitch classification in time frequency images: Enhancing black-hole merger detection in O1 and O2 runs</span><br>
-                    <span class="authors">Authors: Mohan Bhandari*, Aakash Thapa, Loknath Regmi, Suman Sharma, Prakash Paudel, Sanjeeb Prasad Panday</span><br>
-                    <strong>DOI:</strong> <a href="https://doi.org/10.1016/j.dark.2025.101914">https://doi.org/10.1016/j.dark.2025.101914</a></p>
+                    <p>Interpreting decisions of lightweight CNN for glitch classification in time frequency images.</p>
+                    <a href="https://doi.org/10.1016/j.dark.2025.101914" class="btn-link">View DOI <i class="fas fa-arrow-right"></i></a>
                 </div>
                 <div class="card">
-                    <i class="fas fa-book"></i>
-                    <h3>InJET - NepJol (2024)</h3>
-                    <p><span class="title">Enhanced Ulcer Detection Using GAN-Augmented Image Processing and Convolutional Neural Networks</span><br>
-                    <span class="authors">Authors: Mohan Bhandari*, Darshan Bhusal, Kishor Singh, Bishnu Bashyal</span><br>
-                    <strong>DOI:</strong> <a href="https://doi.org/10.3126/injet.v2i1.72489">https://doi.org/10.3126/injet.v2i1.72489</a></p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-book"></i>
-                    <h3>Computing and Artificial Intelligence (2024)</h3>
-                    <p><span class="title">Predicting manipulated regions in deepfake videos using convolutional vision transformers</span><br>
-                    <span class="authors">Authors: Mohan Bhandari*, Sushant Shrestha, Utsab Karki, Santosh Adhikari, Rajan Gaihre</span><br>
-                    <strong>DOI:</strong> <a href="https://doi.org/10.59400/cai.v2i2.1409">https://doi.org/10.59400/cai.v2i2.1409</a></p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-book"></i>
-                    <h3>ACM Transactions TMCCA (2023)</h3>
-                    <p><span class="title">Explanation-Driven HCI Model to Examine the Mini-Mental State for Alzheimer's Disease</span><br>
-                    <span class="authors">Authors: Loveleen Gaur, Mohan Bhandari, Bhadwal Singh Shikhar, Jhanjhi NZ, Mohammad Shorfuzzaman, Mehedi Masud</span><br>
-                    <strong>DOI:</strong> <a href="https://doi.org/10.1145/3527174">https://doi.org/10.1145/3527174</a><br>
-                    <strong>Quartile:</strong> Q1 with IF 5.2 (2023)</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-book"></i>
-                    <h3>Applied Sciences (2023)</h3>
-                    <p><span class="title">Robust Light Weight Deep Learning Model to Augur Deep Features of Renal Abnormalities: Cyst, Stone and Tumor</span><br>
-                    <span class="authors">Authors: Mohan Bhandari, Pratheepan Yogarajah, Muthu Kavitha, Joan Condell</span><br>
-                    <strong>DOI:</strong> <a href="https://doi.org/10.3390/app13053125">https://doi.org/10.3390/app13053125</a><br>
-                    <strong>Quartile:</strong> Q2 with IF 2.5 (2023)</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-book"></i>
-                    <h3>Journal of Imaging (2023)</h3>
-                    <p><span class="title">BotanicX-AI: Identification of Tomato Leaf Diseases using Explanation-driven Deep Learning Model</span><br>
-                    <span class="authors">Authors: Mohan Bhandari, Tej Bahadur Shahi, Arjun Neupane, Kerry Brian Walsh</span><br>
-                    <strong>DOI:</strong> <a href="https://doi.org/10.3390/jimaging9020053">https://doi.org/10.3390/jimaging9020053</a><br>
-                    <strong>Quartile:</strong> Q2 with IF 2.7 (2023)</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-book"></i>
-                    <h3>Journal of Imaging (2023)</h3>
-                    <p><span class="title">Evaluating Retinal Disease Diagnosis with an Interpretable Lightweight CNN Model Resistant to Adversarial Attacks</span><br>
-                    <span class="authors">Authors: Mohan Bhandari, Tej Bahadur Shahi, Arjun Neupane</span><br>
-                    <strong>DOI:</strong> <a href="https://doi.org/10.3390/jimaging9100219">https://doi.org/10.3390/jimaging9100219</a><br>
-                    <strong>Quartile:</strong> Q2 with IF 2.7 (2023)</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-book"></i>
-                    <h3>Computers in Biology and Medicine (2022)</h3>
-                    <p><span class="title">Explanatory classification of CXR images into COVID-19, Pneumonia and Tuberculosis using deep learning and XAI</span><br>
-                    <span class="authors">Authors: Mohan Bhandari, Tej Bahadur Shahi, Birat Siku, and Arjun Neupane</span><br>
-                    <strong>DOI:</strong> <a href="https://doi.org/10.1016/j.compbiomed.2022.106156">https://doi.org/10.1016/j.compbiomed.2022.106156</a><br>
-                    <strong>Quartile:</strong> Q1 with IF 7 (2023)</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-book"></i>
-                    <h3>Journal of Imaging (2022)</h3>
-                    <p><span class="title">Auguring Fake Faces Images Using Dual Input Convolutional Neural Network</span><br>
-                    <span class="authors">Authors: Mohan Bhandari, Arjun Neupane, Saurav Mallik, Loveleen Gaur, Hong Qin</span><br>
-                    <strong>DOI:</strong> <a href="https://doi.org/10.3390/jimaging9010003">https://doi.org/10.3390/jimaging9010003</a><br>
-                    <strong>Quartile:</strong> Q2 with IF 2.7 (2023)</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-book"></i>
-                    <h3>Frontier Of Genetics (2022)</h3>
-                    <p><span class="title">Explanation-driven Deep Learning Model for Prediction of Brain Tumour Status Using MRI Image Data</span><br>
-                    <span class="authors">Authors: Loveleen Gaur, Mohan Bhandari, Tanvi Razdan, Saurav Mallik, Zhongming Zhao</span><br>
-                    <strong>DOI:</strong> <a href="https://doi.org/10.3389/fgene.2022.822666">https://doi.org/10.3389/fgene.2022.822666</a><br>
-                    <strong>Quartile:</strong> Q2 with IF 2.8 (2023)</p>
-                </div>
-            </div>
-            <h3 style="color: var(--primary); margin: 30px 0 20px;">Conferences</h3>
-            <div class="card-grid">
-                <div class="card">
-                    <i class="fas fa-microphone"></i>
-                    <h3>ICIPTM (2022)</h3>
-                    <p><span class="title">Image Steganography Approach Based Ant Colony Optimization With Triangular Chaotic Map</span><br>
-                    <span class="authors">Authors: Mohan Bhandari, Subash Pandey, Chandra Prakash Bhatta, Sanjeev Pandey</span><br>
-                    <strong>DOI:</strong> <a href="https://doi.org/10.1109/ICIPTM54933.2022.9753917">https://doi.org/10.1109/ICIPTM54933.2022.9753917</a><br>
-                    <strong>Description:</strong> 2022 2nd International Conference on Innovative Practices in Technology and Management | Amity University, Noida, India | 23-25 Feb. 2022</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-microphone"></i>
-                    <h3>ICEEE (2022)</h3>
-                    <p><span class="title">Intrusion Detection Based on PCA with Improved K-Means</span><br>
-                    <span class="authors">Authors: Pralhad Chapagain, Mohan Bhandari, Roshan Chitrakar, Arun K. Timilsina</span><br>
-                    <strong>DOI:</strong> <a href="https://doi.org/10.1007/978-981-19-1677-9_2">https://doi.org/10.1007/978-981-19-1677-9_2</a><br>
-                    <strong>Description:</strong> Innovations in Electrical and Electronic Engineering | New Delhi, India | Jan 8-9 2022</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-microphone"></i>
-                    <h3>RTIP2R (2021)</h3>
-                    <p><span class="title">Evaluating Performance of Adam Optimization by Proposing Energy Index</span><br>
-                    <span class="authors">Authors: Mohan Bhandari, Pramod Parajuli, Pralhad Chapagain and Loveleen Gaur</span><br>
-                    <strong>DOI:</strong> <a href="https://doi.org/10.1007/978-3-031-07005-1_15">https://doi.org/10.1007/978-3-031-07005-1_15</a><br>
-                    <strong>Description:</strong> Fourth International Conference on Recent Trends in Image Processing and Pattern Recognition | University of Malta, Msida, Malta | December 8-10, 2021</p>
+                    <span class="badge badge-q1">Q1 SJR 2025</span>
+                    <h3>Computers in Biology and Medicine</h3>
+                    <p>Explanatory classification of CXR images into COVID-19, Pneumonia and Tuberculosis using XAI.</p>
+                    <a href="https://doi.org/10.1016/j.compbiomed.2022.106156" class="btn-link">View DOI <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Book Chapter Section -->
-    <section id="book-chapter">
+    <section id="experience" style="background: #f1f5f9;">
         <div class="container">
-            <h2 class="section-title">Book Chapter</h2>
-            <div class="card-grid">
+            <div class="section-header">
+                <h2>Academic Journey</h2>
+            </div>
+            <div class="grid">
                 <div class="card">
-                    <i class="fas fa-book-open"></i>
-                    <h3>Taylor and Francis (2022)</h3>
-                    <p><span class="title">Development of Image Translating Model to Counter Adversarial Attacks</span><br>
-                    <span class="authors">Authors: Loveleen Gaur, Mohan Bhandari, Tanvi Razdan</span><br>
-                    <strong>DOI:</strong> <a href="https://doi.org/10.1201/9781003231493-5">https://doi.org/10.1201/9781003231493-5</a><br>
-                    <strong>eBook ISBN:</strong> 9781003231493</p>
+                    <span class="badge badge-pub">Current</span>
+                    <h3>PhD Researcher</h3>
+                    <p>SIIT, Thammasat University (Thailand)<br>Focus: Human Blastocyst Analysis & Smart Microscopy.</p>
+                </div>
+                <div class="card">
+                    <span class="badge badge-pub">2015 - 2023</span>
+                    <h3>Senior Lecturer</h3>
+                    <p>Samriddhi College (Nepal)<br>Led the Research Committee and lectured on AI/ML architectures.</p>
+                </div>
+                <div class="card">
+                    <span class="badge badge-pub">Editorial</span>
+                    <h3>Associate Editor</h3>
+                    <p>Frontiers in Digital Health<br>Handling Editor for Health Informatics section.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Supervised Works Section -->
-    <section id="supervised-works">
-        <div class="container">
-            <h2 class="section-title">Supervised Works</h2>
-            <h3 style="color: var(--primary); margin-bottom: 20px;">Journals</h3>
-            <div class="card-grid">
-                <div class="card">
-                    <i class="fas fa-book"></i>
-                    <h3>JEBS (2025)</h3>
-                    <p><span class="title">Weak Form of Market Efficiency in Nepalese Stock Market</span><br>
-                    <span class="authors">Authors: Mohan Khanal, Bhim Kumar Thapa and Mohan Bhandari*</span><br>
-                    <strong>DOI:</strong> <a href="https://doi.org/10.61440/JBES.2025.v2.49">https://doi.org/10.61440/JBES.2025.v2.49</a></p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-book"></i>
-                    <h3>JEBS (2024)</h3>
-                    <p><span class="title">Revolutionizing Currency Security: A Yolov8-Based Approach for Automated Detection of Counterfeit Nepali Banknotes</span><br>
-                    <span class="authors">Authors: Santosh Giri, Loknath Regmi, Sumit Yadav, Binaya Basnet, Binit KC and Mohan Bhandari*</span><br>
-                    <strong>DOI:</strong> <a href="https://doi.org/10.61440/JBES.2024.v1.47">https://doi.org/10.61440/JBES.2024.v1.47</a></p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-book"></i>
-                    <h3>Technical Journal - NepJol (2023)</h3>
-                    <p><span class="title">Predicting Chronic Kidney Disease using ML algorithms and LIME</span><br>
-                    <span class="authors">Authors: Tara Bahadur Thapa* and Mohan Bhandari</span><br>
-                    <strong>DOI:</strong> <a href="https://doi.org/10.3126/tj.v3i1.61946">https://doi.org/10.3126/tj.v3i1.61946</a></p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-book"></i>
-                    <h3>InJET - NepJol (2023)</h3>
-                    <p><span class="title">Unlocking the Potential of CT scans: An Explanation-Driven Deep Learning Model for Predicting Lung Cancer</span><br>
-                    <span class="authors">Authors: Yuba Raj Oli, Loknath Regmi, Prakash Poudel, Satish Kumar Karna and Mohan Bhandari*</span><br>
-                    <strong>DOI:</strong> <a href="https://doi.org/10.3126/injet.v1i1.60945">https://doi.org/10.3126/injet.v1i1.60945</a></p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-book"></i>
-                    <h3>FinTech-MDPI (2023)</h3>
-                    <p><span class="title">Explaining the Factors Affecting Customer Satisfaction in FinTech Firm 'F1 Soft' Using PCA and XAI</span><br>
-                    <span class="authors">Authors: Mohan Khanal, Sudip Raj Khadka, Harendra Subedi, Indra Prasad Chaulagain, Lok Nath Regmi and Mohan Bhandari*</span><br>
-                    <strong>DOI:</strong> <a href="https://doi.org/10.3390/fintech2010006">https://doi.org/10.3390/fintech2010006</a></p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-book"></i>
-                    <h3>Medicon Engineering Themes (2023)</h3>
-                    <p><span class="title">Predicting Chronic Kidney Disease using ML algorithms and XAI</span><br>
-                    <span class="authors">Authors: Sudip Raj Khadka, Saphal Subedi, Bikash Kumar Aidy, Lok Nath Regmi, Ashish Parajuli and Mohan Bhandari*</span><br>
-                    <strong>DOI:</strong> <a href="https://themedicon.com/journals/engineeringthemes/MCET-04-142">10.55162/MCET.04.142</a><br>
-                    <strong>Impact Factor:</strong> 1.63</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-book"></i>
-                    <h3>Medicon Engineering Themes (2023)</h3>
-                    <p><span class="title">Explainable Prediction of features contributing to Intrusion Detection using ML algorithms and LIME</span><br>
-                    <span class="authors">Authors: Satish Kumar Karna*, Prakash Paudel, Ruby Saud and Mohan Bhandari</span><br>
-                    <strong>DOI:</strong> <a href="https://themedicon.com/pdf/engineeringthemes/MCET-05-160.pdf">10.55162/MCET.05.160</a><br>
-                    <strong>Impact Factor:</strong> 1.63</p>
-                </div>
-            </div>
-            <h3 style="color: var(--primary); margin: 30px 0 20px;">Conferences</h3>
-            <div class="card-grid">
-                <div class="card">
-                    <i class="fas fa-microphone"></i>
-                    <h3>NSysS 2023 (2023)</h3>
-                    <p><span class="title">Unveiling Key Predictors for Early Heart Attack Detection using Machine Learning and Explainable AI Technique with LIME</span><br>
-                    <span class="authors">Authors: Prakash Paudel, Satish Kumar Karna, Ruby Saud, Loknath Regmi, Tara Bahadur Thapa, Mohan Bhandari*</span><br>
-                    <strong>Link:</strong> <a href="https://dl.acm.org/doi/abs/10.1145/3629188.3629193">https://doi.org/10.1145/3629188.3629193</a> Pages: 69–78<br>
-                    <strong>Details:</strong> 10<sup>th</sup> NSysS 2023: 10th International Conference on Networking, Systems and Security | Khulna, Bangladesh | December 21 - 23, 2023</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-microphone"></i>
-                    <h3>ICECET (2023)</h3>
-                    <p><span class="title">Determining the Major Contributing Features to Predict Breast Cancer Imposing ML Algorithms with LIME and SHAP</span><br>
-                    <span class="authors">Authors: Prakash Paudel, Ruby Saud, Satish Kumar Karna, Mohan Bhandari</span><br>
-                    <strong>Link:</strong> <a href="https://ieeexplore.ieee.org/abstract/document/10389217">10.1109/ICECET58911.2023.10389217</a> Pages: 2-6<br>
-                    <strong>Details:</strong> 2023 International Conference on Electrical, Computer and Energy Technologies (ICECET) | Cape Town, South Africa | 16-17 Nov. 2023</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-microphone"></i>
-                    <h3>KEC Conference (2022)</h3>
-                    <p><span class="title">Deep Learning Based Brain Tumor Identification in MRI Images on Utilizing Deep Features</span><br>
-                    <span class="authors">Authors: Birat Siku, Sarila Ngakhusi, Sachin Pokharel, Lok Nath Regmi, Sudip Raj Khadka, Mohan Bhandari*</span><br>
-                    <strong>Link:</strong> <a href="https://kec.edu.np/wp-content/uploads/2022/12/KEC-Conference-Proceeding-2022new.pdf">https://kec.edu.np/wp-content/uploads/2022/12/KEC-Conference-Proceeding-2022new.pdf</a> Page Number: 2-6<br>
-                    <strong>Details:</strong> 4th International Conference On Engineering And Technology | Kantipur Engineering College, Dhapakhel, Lalitpur | April 2022</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-microphone"></i>
-                    <h3>KEC Conference (2022)</h3>
-                    <p><span class="title">Counter Measuring the Adversarial Attack in Neural Network Using FGSM Model</span><br>
-                    <span class="authors">Authors: Subash Pandey, Lok Nath Regmi, Chandra Prakash Bhatta, Sobit Gaha Thapa, Sudip Raj Khadka, Mohan Bhandari*</span><br>
-                    <strong>Link:</strong> <a href="https://kec.edu.np/wp-content/uploads/2022/12/KEC-Conference-Proceeding-2022new.pdf">https://kec.edu.np/wp-content/uploads/2022/12/KEC-Conference-Proceeding-2022new.pdf</a> Page Number: 7-11<br>
-                    <strong>Details:</strong> 4th International Conference On Engineering And Technology | Kantipur Engineering College, Dhapakhel, Lalitpur | April 2022</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Dataset Contributions Section -->
     <section id="datasets">
         <div class="container">
-            <h2 class="section-title">Dataset Contributions</h2>
-            <div class="card-grid">
+            <div class="section-header">
+                <h2>Dataset Contributions</h2>
+            </div>
+            <div class="grid">
                 <div class="card">
-                    <i class="fas fa-database"></i>
-                    <h3>Nepali Hate Speech Collection (2023)</h3>
-                    <p><strong>Description:</strong> The dataset presents a detailed corpus-based study of offensive language in Nepali. More than 18 different categories of linguistic offenses including politics, religion, race, and sex are considered and 12 common euphemisms such as synonym, metaphor, and circumlocution are discussed.<br>
-                    <strong>Available on:</strong> <a href="https://www.kaggle.com/datasets/mohanbhandari/nepali-hate-speech-collection" class="btn">View on Kaggle</a></p>
+                    <h3>Sanskrit Image Captioning (2025)</h3>
+                    <p>A specialized corpus mapping visual data to Sanskrit descriptions using Transformers.</p>
+                    <a href="https://www.kaggle.com/datasets/mohanbhandari/sanskrit-image-captioning" class="btn-link">Kaggle Dataset <i class="fas fa-external-link-alt"></i></a>
                 </div>
                 <div class="card">
-                    <i class="fas fa-database"></i>
-                    <h3>Nepali Handwriting Characters (2024)</h3>
-                    <p><strong>Description:</strong> The dataset holds 200 samples for each of the Nepali consonant 36 characters<br>
-                    <strong>Available on:</strong> <a href="https://www.kaggle.com/datasets/mohanbhandari/nepali-handwriting-characters" class="btn">View on Kaggle</a></p>
+                    <h3>UTSC_SmokeRS Dataset</h3>
+                    <p>Satellite-based imagery dataset for dust and smoke detection using Planet SkySat.</p>
+                    <a href="https://www.kaggle.com/datasets/mohanbhandari/test-images-to-utsc-smokers-dataset" class="btn-link">Kaggle Dataset <i class="fas fa-external-link-alt"></i></a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Editorial Section -->
-    <section id="editorial">
-        <div class="container">
-            <h2 class="section-title">Editorial</h2>
-            <div class="card-grid">
-                <div class="card">
-                    <i class="fas fa-edit"></i>
-                    <h3>Medicon Engineering Themes (2023)</h3>
-                    <p><span class="title">Artificial Intelligence, Transparency and Importance of Explainable AI</span><br>
-                    <span class="authors">Author: Mohan Bhandari</span><br>
-                    <strong>Link:</strong> <a href="https://themedicon.com/pdf/engineeringthemes/MCET-04-119.pdf" class="btn">View Article</a></p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Articles Section -->
-    <section id="articles">
-        <div class="container">
-            <h2 class="section-title">Articles</h2>
-            <div class="card-grid">
-                <div class="card">
-                    <i class="fab fa-medium"></i>
-                    <h3>Medium (April 14, 2025)</h3>
-                    <p><strong>Title:</strong> Data Augmentation<br>
-                    <strong>Writer:</strong> Mohan Bhandari<br>
-                    <a href="https://shorturl.at/5coTH" class="btn">Read Article</a></p>
-                </div>
-                <div class="card">
-                    <i class="fab fa-medium"></i>
-                    <h3>Medium (April 26, 2024)</h3>
-                    <p><strong>Title:</strong> Understanding the Differences Between Object Detection and Object Tracking<br>
-                    <strong>Writer:</strong> Mohan Bhandari<br>
-                    <a href="https://rb.gy/qpfk1c" class="btn">Read Article</a></p>
-                </div>
-                <div class="card">
-                    <i class="fab fa-linkedin"></i>
-                    <h3>LinkedIn (June 10, 2020)</h3>
-                    <p><strong>Title:</strong> Resolve "could not load file or assembly WiBuCmNet, Version=x.xx.xxx.xx, Culture= Neutral" in Viz Engine<br>
-                    <strong>Writer:</strong> Mohan Bhandari<br>
-                    <a href="https://rb.gy/3flrn5" class="btn">Read Article</a></p>
-                </div>
-                <div class="card">
-                    <i class="fab fa-linkedin"></i>
-                    <h3>LinkedIn (June 5, 2020)</h3>
-                    <p><strong>Title:</strong> Extract CIFAR-10 data set<br>
-                    <strong>Writer:</strong> Mohan Bhandari<br>
-                    <a href="https://rb.gy/rmd9b9" class="btn">Read Article</a></p>
-                </div>
-                <div class="card">
-                    <i class="fab fa-linkedin"></i>
-                    <h3>LinkedIn (April 28, 2020)</h3>
-                    <p><strong>Title:</strong> Upgrade to Ubuntu 20.04 LTS from Ubuntu 18.04 & 19.10<br>
-                    <strong>Writer:</strong> Mohan Bhandari<br>
-                    <a href="https://rb.gy/ucgj5k" class="btn">Read Article</a></p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Handling Editor Section -->
-    <section id="handling-editor">
-        <div class="container">
-            <h2 class="section-title">Handling Editor</h2>
-            <div class="card-grid">
-                <div class="card">
-                    <i class="fas fa-user-edit"></i>
-                    <h3>Frontiers in Digital Health (Sep 2024 - Running)</h3>
-                    <p>Serving as Review Editor for Frontiers in Digital Health under Health Informatics section<br>
-                    <strong>Profile:</strong> <a href="https://loop.frontiersin.org/people/1686777/overview" class="btn">View Profile</a></p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Peer-review Contributions Section -->
-    <section id="peer-review">
-        <div class="container">
-            <h2 class="section-title">Peer-review Contributions</h2>
-            <div class="card">
-                <i class="fas fa-file-alt"></i>
-                <h3>Reviewer Contributions</h3>
-                <p>Served as a reviewer in national and international journals and conferences:<br>
-                <a href="https://www.webofscience.com/wos/author/record/KVC-3085-2024">IEEE Access</a> - IEEE | 
-                <a href="https://drive.google.com/file/d/1IxsFDrZve3nEZ5IHyUj4QzJ1s3Cjy2AQ/view?usp=sharing">Computers in Biology and Medicine</a> - Elsevier |  
-                <a href="https://drive.google.com/file/d/1S0TohBd4waxcxTIN-0YPFzzYtlovAtGq/view?usp=sharing">Artificial Intelligence in Agriculture</a> - Elsevier | 
-                Scientia Horticulturae - Elsevier | 
-                <a href="https://drive.google.com/drive/folders/1PHtEz6-JNf4pyyqG3deG06sleWJ1Fz_G?usp=sharing">Respiratory Research / Discover / Scientific Reports</a> - Springer Nature | 
-                Computational Intelligence and Neuroscience - Hindawi | 
-                <a href="https://loop.frontiersin.org/people/1686777/editorial">Frontiers in Aging Neuroscience / Frontiers in Neuroscience Neurodegeneration / Frontiers in Digital Health</a> - Frontier |  
-                International Journal of Computational Biology and Drug Design - Inderscience Publishers | 
-                Journal of Infectious Diseases and Epidemiology (University of Toronto) | 
-                <a href="https://drive.google.com/file/d/1LgvSCYdUC3TjtzpW-JHj2cpsLJooFnCc/view?usp=sharing">KEC Conference / International Journal on Engineering Technology</a> (Kantipur Engineering College-Nepal) |  
-                <a href="https://themedicon.com/engineeringthemes-reviewer-board">Medicon Journal</a> | 
-                <a href="https://drive.google.com/file/d/1dgTjvBALhYe1PrzcgXotLbjbDZ6Ee9XK/view?usp=sharing">International Conference on Artificial Intelligence and Human-Computer Interaction</a> and more ...</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills">
-        <div class="container">
-            <h2 class="section-title">Skills</h2>
-            <div class="skills-container">
-                <div class="skill-category">
-                    <h3><i class="fas fa-code"></i> Coding</h3>
-                    <div class="skill-item">
-                        <div class="skill-name">
-                            <span>Python</span>
-                            <span>90%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-level" style="width: 90%;"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-name">
-                            <span>C#</span>
-                            <span>85%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-level" style="width: 85%;"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3><i class="fas fa-database"></i> Databases</h3>
-                    <div class="skill-item">
-                        <div class="skill-name">
-                            <span>MSSQL</span>
-                            <span>80%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-level" style="width: 80%;"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-name">
-                            <span>SQLite</span>
-                            <span>75%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-level" style="width: 75%;"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3><i class="fas fa-globe"></i> Web Development</h3>
-                    <div class="skill-item">
-                        <div class="skill-name">
-                            <span>HTML/CSS</span>
-                            <span>85%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-level" style="width: 85%;"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-name">
-                            <span>JavaScript</span>
-                            <span>80%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-level" style="width: 80%;"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3><i class="fas fa-mobile-alt"></i> Mobile</h3>
-                    <div class="skill-item">
-                        <div class="skill-name">
-                            <span>Flutter</span>
-                            <span>75%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-level" style="width: 75%;"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3><i class="fas fa-tools"></i> Miscellaneous</h3>
-                    <div class="skill-item">
-                        <div class="skill-name">
-                            <span>Machine Learning Algorithms</span>
-                            <span>90%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-level" style="width: 90%;"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-name">
-                            <span>Explainable AI</span>
-                            <span>85%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-level" style="width: 85%;"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-name">
-                            <span>Quantum Computing</span>
-                            <span>70%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-level" style="width: 70%;"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-name">
-                            <span>Academic Research</span>
-                            <span>90%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-level" style="width: 90%;"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-name">
-                            <span>LaTeX Typesetting</span>
-                            <span>85%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-level" style="width: 85%;"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Referees Section -->
-    <section id="referees">
-        <div class="container">
-            <h2 class="section-title">Referees</h2>
-            <div class="card-grid">
-                <div class="card">
-                    <i class="fas fa-user-tie"></i>
-                    <h3>Stanislav S. Makhananov (Ph.D)</h3>
-                    <p>Full Professor - SIIT, Thammasat University, Thailand</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-user-tie"></i>
-                    <h3>Pratheepan Yogarajah (Ph.D)</h3>
-                    <p>Lecturer - Computer Science, Ulster University, UK</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-user-tie"></i>
-                    <h3>Loveleen Gaur (Ph.D)</h3>
-                    <p>Full Professor | Program Director (AI & Data Analytics), Amity University, India | Senior IEEE Member | IEEE Brand Ambassador</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-user-tie"></i>
-                    <h3>Pramod Parajuli</h3>
-                    <p>Chief Innovation Officer, Nepal Payment | Principal, CG Institute of Management</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-user-tie"></i>
-                    <h3>Saroj Shakya</h3>
-                    <p>Masters' Co-ordinator, Nepal College of Information and Technology</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="social-links">
-                <a href="https://github.com/MohanBhandari"><i class="fab fa-github"></i></a>
-                <a href="https://medium.com/@mail2mohanbhandari"><i class="fab fa-medium"></i></a>
-                <a href="https://www.linkedin.com/in/mohan-bhandari-57645591300"><i class="fab fa-linkedin"></i></a>
+            <div class="footer-socials">
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-medium"></i></a>
             </div>
-            <p>&copy; 2025 Mohan Bhandari. All rights reserved.</p>
-            <p>Hosted on GitHub Pages</p>
-            <p>All the information provided is correct to the best of my knowledge.</p>
+            <p>&copy; 2026 Mohan Bhandari. Sirindhorn International Institute of Technology.</p>
+            <p style="font-size: 0.75rem; margin-top: 1rem;">Optimized for Academic Peer Review</p>
         </div>
     </footer>
 
-    <script>
-        // Mobile menu toggle functionality
-        document.querySelector('.menu-toggle').addEventListener('click', () => {
-            document.querySelector('.nav-links').classList.toggle('active');
-        });
-    </script>
 </body>
 </html>
