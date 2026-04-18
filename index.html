@@ -8,34 +8,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <style>
         body { font-family: 'Segoe UI', system-ui, sans-serif; }
-        .section-title {
-            position: relative;
-            padding-bottom: 0.5rem;
-        }
+        .section-title { position: relative; padding-bottom: 0.5rem; }
         .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 60px;
-            height: 3px;
-            background: linear-gradient(to right, #1e40af, #3b82f6);
+            content: ''; position: absolute; bottom: 0; left: 0;
+            width: 60px; height: 3px; background: linear-gradient(to right, #1e40af, #3b82f6);
         }
-        .publication-card {
-            transition: all 0.3s ease;
-        }
-        .publication-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-        }
-        .dropdown-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.5s ease-out;
-        }
-        .dropdown-content.open {
-            max-height: 8000px;
-        }
+        .card { transition: all 0.3s ease; }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1); }
+        .dropdown-content { max-height: 0; overflow: hidden; transition: max-height 0.6s ease-out; }
+        .dropdown-content.open { max-height: 15000px; }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
@@ -44,49 +25,27 @@
     <nav class="bg-white shadow-md sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
             <div class="flex items-center gap-3">
-                <div class="w-10 h-10 bg-blue-700 rounded-full flex items-center justify-center text-white font-bold text-2xl">MB</div>
+                <div class="w-11 h-11 bg-blue-700 rounded-full flex items-center justify-center text-white font-bold text-2xl">MB</div>
                 <div>
                     <h1 class="text-2xl font-bold">Mohan Bhandari</h1>
-                    <p class="text-sm text-gray-500 -mt-1">PhD Scholar • Medical Image Processing</p>
+                    <p class="text-sm text-gray-500">PhD Scholar • Medical Image Processing</p>
                 </div>
             </div>
-            <div class="hidden md:flex gap-8 text-sm font-medium">
-                <a href="#bio" class="hover:text-blue-700 transition">Bio</a>
-                <a href="#education" class="hover:text-blue-700 transition">Education</a>
-                <a href="#experience" class="hover:text-blue-700 transition">Experience</a>
-                <a href="#publications" class="hover:text-blue-700 transition">Publications</a>
-                <a href="#awards" class="hover:text-blue-700 transition">Awards</a>
-            </div>
-            <a href="mailto:mail2mohanbhandari@gmail.com" class="bg-blue-700 hover:bg-blue-800 text-white px-6 py-3 rounded-xl text-sm font-semibold transition">
-                Get in Touch
-            </a>
+            <a href="mailto:mail2mohanbhandari@gmail.com" class="bg-blue-700 text-white px-6 py-3 rounded-xl font-semibold hover:bg-blue-800">Contact Me</a>
         </div>
     </nav>
 
     <!-- Hero -->
     <header class="bg-gradient-to-br from-blue-900 to-indigo-900 text-white py-16">
         <div class="max-w-6xl mx-auto px-6 text-center">
-            <h1 class="text-6xl font-bold mb-2">Mohan Bhandari</h1>
+            <h1 class="text-6xl font-bold mb-3">Mohan Bhandari</h1>
             <p class="text-2xl text-blue-200">PhD Scholar in Engineering and Technology</p>
-            <p class="mt-2 text-blue-300">Sirindhorn International Institute of Technology, Thammasat University, Thailand</p>
-
-            <div class="mt-10 flex flex-wrap justify-center gap-x-8 gap-y-4 text-sm">
-                <a href="tel:+9779856038767" class="flex items-center gap-2 hover:text-blue-200">
-                    <i class="fa-brands fa-whatsapp"></i> +977-9856038767
-                </a>
-                <a href="mailto:mail2mohanbhandari@gmail.com" class="flex items-center gap-2 hover:text-blue-200">
-                    <i class="fa-solid fa-envelope"></i> mail2mohanbhandari@gmail.com
-                </a>
-                <a href="https://mohanbhandari.github.io/" target="_blank" class="flex items-center gap-2 hover:text-blue-200">
-                    <i class="fa-solid fa-globe"></i> Personal Website
-                </a>
-            </div>
-
-            <div class="mt-8 flex justify-center gap-6 text-3xl">
-                <a href="https://www.linkedin.com/in/mohan-bhandari-4b3648ba/" target="_blank" class="hover:scale-110 transition"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="https://github.com/MohanBhandari" target="_blank" class="hover:scale-110 transition"><i class="fa-brands fa-github"></i></a>
-                <a href="https://orcid.org/0000-0003-2551-3163" target="_blank" class="hover:scale-110 transition"><i class="fa-solid fa-id-card"></i></a>
-                <a href="https://scholar.google.com/citations?user=yH2GdSQAAAAJ" target="_blank" class="hover:scale-110 transition"><i class="fa-solid fa-graduation-cap"></i></a>
+            <p class="mt-2">Sirindhorn International Institute of Technology (SIIT), Thammasat University, Thailand</p>
+            
+            <div class="mt-10 flex flex-wrap justify-center gap-x-8 gap-y-3 text-sm">
+                <a href="tel:+9779856038767" class="flex items-center gap-2"><i class="fa-brands fa-whatsapp"></i> +977-9856038767</a>
+                <a href="mailto:mail2mohanbhandari@gmail.com" class="flex items-center gap-2"><i class="fa-solid fa-envelope"></i> mail2mohanbhandari@gmail.com</a>
+                <a href="https://mohanbhandari.github.io/" target="_blank" class="flex items-center gap-2"><i class="fa-solid fa-globe"></i> Personal Website</a>
             </div>
         </div>
     </header>
@@ -94,46 +53,38 @@
     <div class="max-w-6xl mx-auto px-6 py-12">
 
         <!-- Bio -->
-        <section id="bio" class="mb-16">
+        <section class="mb-16">
             <h2 class="section-title text-3xl font-bold mb-6">Biography</h2>
-            <div class="bg-white rounded-2xl shadow p-8 leading-relaxed text-lg">
+            <div class="bg-white rounded-2xl shadow p-8 text-lg leading-relaxed">
                 Mohan Bhandari received a Bachelor's degree in Computer Engineering and a Master's degree in Computer Engineering from Pokhara University. He is currently a PhD Scholar specializing in Medical Image Processing at Sirindhorn International Institute of Technology (SIIT), Thammasat University, Thailand. His research field encompasses Explainable AI in medical imaging, neural architecture search, and vision-language models. He actively engages with a worldwide network of researchers. He is an associate editor for Frontiers in Digital Health and serves as a peer reviewer for numerous international journals and conferences. He has received multiple awards, including an EFS Scholarship and Best Research Paper Award.
             </div>
         </section>
 
         <!-- Education -->
-        <section id="education" class="mb-16">
+        <section class="mb-16">
             <h2 class="section-title text-3xl font-bold mb-6">Education</h2>
             <div class="space-y-6">
                 <div class="bg-white p-7 rounded-2xl shadow">
                     <div class="flex justify-between">
-                        <div>
-                            <h3 class="font-semibold text-xl">Doctor of Philosophy (Engineering and Technology)</h3>
-                            <p class="text-blue-600">Sirindhorn International Institute of Technology, Thammasat University</p>
-                        </div>
-                        <span class="text-sm bg-blue-100 text-blue-700 px-4 py-1 rounded-full">2024 – Present</span>
+                        <div><h3 class="font-semibold text-xl">Doctor of Philosophy (Engineering and Technology)</h3>
+                        <p class="text-blue-600">Sirindhorn International Institute of Technology, Thammasat University</p></div>
+                        <span class="bg-blue-100 text-blue-700 px-4 py-1 rounded-full text-sm">2024 – Present</span>
                     </div>
                     <p class="mt-3"><strong>Dissertation:</strong> Human Blastocyst Analysis</p>
                 </div>
-
                 <div class="bg-white p-7 rounded-2xl shadow">
                     <div class="flex justify-between">
-                        <div>
-                            <h3 class="font-semibold text-xl">Master of Computer Engineering</h3>
-                            <p class="text-blue-600">Nepal College of Information Technology, Lalitpur</p>
-                        </div>
-                        <span class="text-sm bg-blue-100 text-blue-700 px-4 py-1 rounded-full">2017</span>
+                        <div><h3 class="font-semibold text-xl">Master of Computer Engineering</h3>
+                        <p class="text-blue-600">Nepal College of Information Technology, Lalitpur</p></div>
+                        <span class="bg-blue-100 text-blue-700 px-4 py-1 rounded-full text-sm">2017</span>
                     </div>
                     <p class="mt-3"><strong>Dissertation:</strong> <a href="https://doi.org/10.1007/978-3-031-07005-1_15" class="text-blue-600 hover:underline">Performance Analysis of Adam Optimization on Introducing Energy Index</a></p>
                 </div>
-
                 <div class="bg-white p-7 rounded-2xl shadow">
                     <div class="flex justify-between">
-                        <div>
-                            <h3 class="font-semibold text-xl">Bachelor of Computer Engineering</h3>
-                            <p class="text-blue-600">Pokhara Engineering College, Pokhara</p>
-                        </div>
-                        <span class="text-sm bg-blue-100 text-blue-700 px-4 py-1 rounded-full">2007 – 2011</span>
+                        <div><h3 class="font-semibold text-xl">Bachelor of Computer Engineering</h3>
+                        <p class="text-blue-600">Pokhara Engineering College, Pokhara</p></div>
+                        <span class="bg-blue-100 text-blue-700 px-4 py-1 rounded-full text-sm">2007 – 2011</span>
                     </div>
                     <p class="mt-3"><strong>Major Project:</strong> <a href="https://drive.google.com/file/d/12uSVnx2cSFOA8r2KmO90BYkgU5xg6aQO/view" class="text-blue-600 hover:underline">Video On Demand</a></p>
                 </div>
@@ -141,36 +92,36 @@
         </section>
 
         <!-- Academic Experience -->
-        <section id="experience" class="mb-16">
+        <section class="mb-16">
             <h2 class="section-title text-3xl font-bold mb-6">Academic Experience</h2>
-            <div class="grid md:grid-cols-2 gap-6">
+            <div class="space-y-6">
                 <div class="bg-white p-7 rounded-2xl shadow">
                     <h3 class="font-semibold">Teaching Assistant</h3>
                     <p class="text-blue-600">SIIT, Thammasat University • Aug 2024 – Present</p>
-                    <ul class="mt-3 list-disc pl-5 text-gray-600">
-                        <li>Assisting undergraduate courses: Database Management Systems, Computer Graphics, Python, Data Structures</li>
-                    </ul>
+                    <p class="mt-2 text-gray-600">Assisting in Database Management Systems, Computer Graphics, Python, and Data Structures.</p>
                 </div>
                 <div class="bg-white p-7 rounded-2xl shadow">
                     <h3 class="font-semibold">Senior Lecturer & Research Committee Member</h3>
                     <p class="text-blue-600">Samriddhi College, Bhaktapur • Sep 2015 – Dec 2023</p>
-                    <ul class="mt-3 list-disc pl-5 text-gray-600">
-                        <li>Taught Programming, Artificial Intelligence, and Image Processing</li>
-                        <li>Mentored students in research activities</li>
-                    </ul>
+                    <p class="mt-2 text-gray-600">Lectures on Programming, AI, and Image Processing. Mentored students in research.</p>
+                </div>
+                <div class="bg-white p-7 rounded-2xl shadow">
+                    <h3 class="font-semibold">Adjunct Faculty</h3>
+                    <p class="text-blue-600">Phoenix College of Management, Kathmandu • June 2021 – Dec 2023</p>
+                    <p class="mt-2 text-gray-600">Taught Data Warehousing and Data Mining. Supervised graduate thesis work.</p>
                 </div>
             </div>
         </section>
 
         <!-- Awards -->
-        <section id="awards" class="mb-16">
+        <section class="mb-16">
             <h2 class="section-title text-3xl font-bold mb-6">Awards & Scholarships</h2>
             <div class="grid md:grid-cols-2 gap-6">
-                <div class="bg-emerald-50 border border-emerald-200 p-6 rounded-2xl">
+                <div class="bg-emerald-50 p-6 rounded-2xl border border-emerald-200">
                     <h3 class="font-bold">Excellent Foreign Scholarship (EFS)</h3>
                     <p class="text-emerald-700">SIIT, Thammasat University (2024–2026)</p>
                 </div>
-                <div class="bg-amber-50 border border-amber-200 p-6 rounded-2xl">
+                <div class="bg-amber-50 p-6 rounded-2xl border border-amber-200">
                     <h3 class="font-bold">Best Research Paper Award</h3>
                     <p class="text-amber-700">2nd ICIPTM, Amity University, India (Feb 2024)</p>
                 </div>
@@ -178,108 +129,112 @@
         </section>
 
         <!-- Publications -->
-        <section id="publications" class="mb-20">
-            <h2 class="section-title text-3xl font-bold mb-6 flex justify-between items-center">
-                Publications & Supervised Works
-                <button onclick="toggleDropdown()" class="text-blue-600 text-sm font-medium flex items-center gap-2 hover:text-blue-800">
-                    <span id="toggle-text">Show All</span>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </button>
-            </h2>
+        <section class="mb-20">
+            <h2 class="section-title text-3xl font-bold mb-8">Publications</h2>
 
-            <div id="publications-list" class="dropdown-content open grid md:grid-cols-2 gap-6">
-                <!-- All publications will be injected here by JavaScript -->
+            <!-- Journals -->
+            <h3 class="text-2xl font-bold mb-6 text-blue-800">Journal Publications</h3>
+            <div class="grid md:grid-cols-2 gap-6 mb-16">
+                <div class="col-span-2 text-lg font-medium text-gray-600 mb-4">My Publications</div>
+                <div class="card bg-white p-6 rounded-2xl border"> [J.11] NMT-UNet... IEEE Access, 2026 </div>
+                <div class="card bg-white p-6 rounded-2xl border"> [J.10] Interpreting decisions... Physics of the Dark Universe, 2025 </div>
+                <div class="card bg-white p-6 rounded-2xl border"> [J.9] Enhanced Ulcer Detection... Int. Journal on Eng. Tech., 2024 </div>
+                <div class="card bg-white p-6 rounded-2xl border"> [J.8] Predicting manipulated regions... Computing and AI, 2024 </div>
+                <div class="card bg-white p-6 rounded-2xl border"> [J.7] Explanation-Driven HCI Model... ACM TOMM, 2023 </div>
+                <div class="card bg-white p-6 rounded-2xl border"> [J.6] Robust Light Weight Deep Learning... Applied Sciences, 2023 </div>
+                <div class="card bg-white p-6 rounded-2xl border"> [J.5] BotanicX-AI... Journal of Imaging, 2023 </div>
+                <div class="card bg-white p-6 rounded-2xl border"> [J.4] Evaluating Retinal Disease... Journal of Imaging, 2023 </div>
+                <div class="card bg-white p-6 rounded-2xl border"> [J.3] Explanatory classification of CXR... Computers in Biology and Medicine, 2022 </div>
+                <div class="card bg-white p-6 rounded-2xl border"> [J.2] Auguring Fake Faces... Journal of Imaging, 2023 </div>
+                <div class="card bg-white p-6 rounded-2xl border"> [J.1] Explanation driven Deep Learning... Frontiers in Genetics, 2022 </div>
+                <div class="card bg-white p-6 rounded-2xl border"> [B.1] Development of Image Translating Model... CRC Press, 2022 </div>
+
+                <div class="col-span-2 text-lg font-medium text-gray-600 mt-10 mb-4">Supervised Publications</div>
+                <div class="card bg-white p-6 rounded-2xl border"> [S.J.8] Beyond Accuracy... Int. Journal on Eng. Tech., 2025 </div>
+                <div class="card bg-white p-6 rounded-2xl border"> [S.J.7] Weak Form of Market Efficiency... JBES, 2025 </div>
+                <div class="card bg-white p-6 rounded-2xl border"> [S.J.6] Revolutionizing Currency Security... JBES, 2024 </div>
+                <div class="card bg-white p-6 rounded-2xl border"> [S.J.5] Predicting Chronic Kidney Disease... Technical Journal, 2023 </div>
+                <div class="card bg-white p-6 rounded-2xl border"> [S.J.4] Unlocking the Potential of CT scans... Int. Journal on Eng. Tech., 2023 </div>
+                <div class="card bg-white p-6 rounded-2xl border"> [S.J.3] Explaining Factors in FinTech... FinTech, 2023 </div>
+                <div class="card bg-white p-6 rounded-2xl border"> [S.J.2] Predicting Chronic Kidney Disease... Medicon, 2023 </div>
+                <div class="card bg-white p-6 rounded-2xl border"> [S.J.1] Explainable Prediction of Intrusion... Medicon, 2023 </div>
+            </div>
+
+            <!-- Conferences -->
+            <h3 class="text-2xl font-bold mb-6 text-blue-800">Conference Publications</h3>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="col-span-2 text-lg font-medium text-gray-600 mb-4">My Publications</div>
+                <div class="card bg-white p-6 rounded-2xl border"> [C.4] Vision Language Model... ICICSET 2025 </div>
+                <div class="card bg-white p-6 rounded-2xl border"> [C.3] Image Steganography... ICIPTM 2022, IEEE </div>
+                <div class="card bg-white p-6 rounded-2xl border"> [C.2] Intrusion Detection... ICEEE 2022, Springer </div>
+                <div class="card bg-white p-6 rounded-2xl border"> [C.1] Evaluating Performance of Adam... RTIP2R 2021, Springer </div>
+
+                <div class="col-span-2 text-lg font-medium text-gray-600 mt-10 mb-4">Supervised Publications</div>
+                <div class="card bg-white p-6 rounded-2xl border"> [S.C.5] Generating Sanskrit Captions... ICICSET 2025 </div>
+                <div class="card bg-white p-6 rounded-2xl border"> [S.C.4] Unveiling Key Predictors... NSysS 2023, ACM </div>
+                <div class="card bg-white p-6 rounded-2xl border"> [S.C.3] Determining Major Features... ICECET 2023, IEEE </div>
+                <div class="card bg-white p-6 rounded-2xl border"> [S.C.2] Deep Learning Based Brain Tumor... ICET 2022 </div>
+                <div class="card bg-white p-6 rounded-2xl border"> [S.C.1] Counter Measuring Adversarial Attack... ICET 2022 </div>
             </div>
         </section>
 
-        <!-- Skills -->
-        <section class="mb-16">
-            <h2 class="section-title text-3xl font-bold mb-6">Skills</h2>
-            <div class="grid md:grid-cols-3 gap-6">
-                <div class="bg-white p-6 rounded-2xl shadow">
-                    <h3 class="font-semibold mb-3">Programming</h3>
-                    <p class="text-gray-600">Python, C#</p>
-                </div>
-                <div class="bg-white p-6 rounded-2xl shadow">
-                    <h3 class="font-semibold mb-3">AI & Research</h3>
-                    <p class="text-gray-600">Medical Image Processing, Explainable AI (XAI), Vision-Language Models, Neural Architecture Search</p>
-                </div>
-                <div class="bg-white p-6 rounded-2xl shadow">
-                    <h3 class="font-semibold mb-3">Tools & Others</h3>
-                    <p class="text-gray-600">MySQL, MSSQL, Git, Firebase, Peer Review, Academic Writing</p>
-                </div>
+        <!-- Editorial & Review -->
+        <section class="mb-16 grid md:grid-cols-2 gap-8">
+            <div class="bg-white p-8 rounded-3xl shadow">
+                <h3 class="font-bold text-xl mb-6">Handling Editor</h3>
+                <p><strong>Associate Editor for Health Informatics</strong><br>
+                Frontiers in Digital Health<br>
+                <span class="text-sm text-gray-500">Since March 6, 2024</span></p>
+            </div>
+            <div class="bg-white p-8 rounded-3xl shadow">
+                <h3 class="font-bold text-xl mb-6">Peer Review Contributions</h3>
+                <p class="text-sm text-gray-600 leading-relaxed">
+                    IEEE Access, Computers in Biology and Medicine, Artificial Intelligence in Agriculture, Scientia Horticulturae, Springer Nature journals, Frontiers, Medicon, KEC Conference, and many more.
+                </p>
+            </div>
+        </section>
+
+        <!-- Articles & Datasets -->
+        <section class="grid md:grid-cols-2 gap-8 mb-16">
+            <div class="bg-white p-8 rounded-3xl shadow">
+                <h3 class="font-bold text-xl mb-6">Articles</h3>
+                <ul class="space-y-4 text-sm">
+                    <li><a href="https://medium.com/@mail2mohanbhandari/data-augmentation-ce7c580038d8" class="hover:underline">Data Augmentation (2025)</a></li>
+                    <li><a href="https://medium.com/@mail2mohanbhandari/understanding-the-differences-between-object-tracking-and-object-detection-f9869ded5676" class="hover:underline">Object Detection vs Object Tracking (2025)</a></li>
+                    <li>Resolve WiBuCmNet Assembly Error (2020)</li>
+                    <li>Extract CIFAR-10 Dataset (2020)</li>
+                    <li>Upgrade Ubuntu 20.04 (2020)</li>
+                </ul>
+            </div>
+            <div class="bg-white p-8 rounded-3xl shadow">
+                <h3 class="font-bold text-xl mb-6">Dataset Contributions (Kaggle)</h3>
+                <ul class="space-y-4 text-sm">
+                    <li><a href="https://www.kaggle.com/datasets/mohanbhandari/sanskrit-image-captioning" class="hover:underline">Sanskrit Image Captioning (2025)</a></li>
+                    <li><a href="https://www.kaggle.com/datasets/mohanbhandari/test-images-to-utsc-smokers-dataset" class="hover:underline">Test Images for UTSC_SmokeRS (2025)</a></li>
+                    <li><a href="https://www.kaggle.com/datasets/mohanbhandari/nepali-handwriting-characters" class="hover:underline">Nepali Handwriting Characters (2023)</a></li>
+                    <li><a href="https://www.kaggle.com/datasets/mohanbhandari/nepali-hate-speech-collection" class="hover:underline">Nepali Hate Speech Collection (2023)</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- References -->
+        <section class="bg-white rounded-3xl p-10 shadow">
+            <h2 class="section-title text-3xl font-bold mb-8">References</h2>
+            <div class="grid md:grid-cols-2 gap-8 text-sm">
+                <div><strong>Prof. Stanislav S. Makhanov</strong><br>PhD Advisor, SIIT, Thammasat University</div>
+                <div><strong>Dr. Pratheepan Yogarajah</strong><br>Lecturer, Ulster University, UK</div>
+                <div><strong>Prof. Loveleen Gaur</strong><br>Amity University, India</div>
+                <div><strong>Mr. Pramod Parajuli</strong><br>Master Thesis Supervisor</div>
+                <div><strong>Prof. Saroj Shakya</strong><br>Nepal College of Information Technology</div>
             </div>
         </section>
 
     </div>
 
-    <!-- Footer -->
     <footer class="bg-gray-900 text-gray-400 py-12 text-center">
         <p>Dhikurpokhari, Annapurna-2, Gandaki - 33700, Nepal</p>
         <p class="mt-2">© 2026 Mohan Bhandari</p>
     </footer>
 
-    <script>
-        const publications = [
-            {id: "[J.11]", title: "NMT-UNet: Neural Architecture Search for Multi-Task UNet to Segment Human Blastocyst Components", venue: "IEEE Access, 2026", doi: "10.1109/ACCESS.2026.3672466"},
-            {id: "[J.10]", title: "Interpreting decisions of lightweight CNN for glitch classification in time frequency images", venue: "Physics of the Dark Universe, 2025", doi: "10.1016/j.dark.2025.101914"},
-            {id: "[J.9]", title: "Enhanced Ulcer Detection Using GAN-Augmented Image Processing and Convolutional Neural Networks", venue: "International Journal on Engineering Technology, 2024", doi: "10.3126/injet.v2i1.72489"},
-            {id: "[J.8]", title: "Predicting manipulated regions in deepfake videos using convolutional vision transformers", venue: "Computing and Artificial Intelligence, 2024", doi: "10.59400/cai.v2i2.1409"},
-            {id: "[J.7]", title: "Explanation-Driven HCI Model to Examine the Mini-Mental State for Alzheimer's Disease", venue: "ACM Transactions on Multimedia Computing, Communications, and Applications, 2023", doi: "10.1145/3527174"},
-            {id: "[J.6]", title: "Robust Light Weight Deep Learning Model to Augur Deep Features of Renal Abnormalities", venue: "Applied Sciences, 2023", doi: "10.3390/app13053125"},
-            {id: "[J.5]", title: "BotanicX-AI: Identification of Tomato Leaf Diseases using Explanation-driven Deep Learning Model", venue: "Journal of Imaging, 2023", doi: "10.3390/jimaging9020053"},
-            {id: "[J.4]", title: "Evaluating Retinal Disease Diagnosis with an Interpretable Lightweight CNN Model", venue: "Journal of Imaging, 2023", doi: "10.3390/jimaging9100219"},
-            {id: "[J.3]", title: "Explanatory classification of CXR images into COVID-19, Pneumonia and Tuberculosis", venue: "Computers in Biology and Medicine, 2022", doi: "10.1016/j.compbiomed.2022.106156"},
-            {id: "[J.2]", title: "Auguring Fake Faces Images Using Dual Input Convolutional Neural Network", venue: "Journal of Imaging, 2023", doi: "10.3390/jimaging9010003"},
-            {id: "[J.1]", title: "Explanation driven Deep Learning Model for Prediction of Brain Tumour Status Using MRI Image Data", venue: "Frontiers in Genetics, 2022", doi: "10.3389/fgene.2022.822666"},
-            {id: "[B.1]", title: "Development of Image Translating Model to Counter Adversarial Attacks", venue: "Deepfakes (Book Chapter), CRC Press, 2022", doi: "10.1201/9781003231493-5"},
-            {id: "[C.4]", title: "Vision Language Model for Clinical Decision Support System", venue: "ICICSET 2025", doi: "10.65091/icicset.v2i1.11"},
-            {id: "[C.3]", title: "Image Steganography Approach Based Ant Colony Optimization With Triangular Chaotic Map", venue: "ICIPTM 2022, IEEE", doi: "10.1109/ICIPTM54933.2022.9753917"},
-            {id: "[C.2]", title: "Intrusion Detection Based on PCA with Improved K-Means", venue: "ICEEE 2022, Springer", doi: "10.1007/978-981-19-1677-9_2"},
-            {id: "[C.1]", title: "Evaluating Performance of Adam Optimization by Proposing Energy Index", venue: "RTIP2R 2021, Springer", doi: "10.1007/978-3-031-07005-1_15"},
-
-            // Supervised Publications
-            {id: "[S.J.8]", title: "Beyond Accuracy and Classification: XAI Driven Interpretability in Cervical Cancer", venue: "International Journal on Engineering Technology, 2025", doi: "10.3126/injet.v3i1.87023"},
-            {id: "[S.J.7]", title: "Weak Form of Market Efficiency in Nepalese Stock Market", venue: "Journal of Business and Econometrics Studies, 2025", doi: "10.61440/JBES.2025.v2.49"},
-            {id: "[S.J.6]", title: "Revolutionizing Currency Security: A Yolov8-Based Approach for Automated Detection of Counterfeit Nepali Banknotes", venue: "Journal of Business and Econometrics Studies, 2024", doi: "10.61440/JBES.2024.v1.47"},
-            {id: "[S.J.5]", title: "Predicting Chronic Kidney Disease using ML algorithms and LIME", venue: "Technical Journal, 2023", doi: "10.3126/tj.v3i1.61946"},
-            {id: "[S.J.4]", title: "Unlocking the Potential of CT scans: An Explanation-Driven Deep Learning Model for Predicting Lung Cancer", venue: "International Journal on Engineering Technology, 2023", doi: "10.3126/injet.v1i1.60945"},
-            {id: "[S.J.3]", title: "Explaining the Factors Affecting Customer Satisfaction in FinTech Firm 'F1 Soft' Using PCA and XAI", venue: "FinTech, 2023", doi: "10.3390/fintech2010006"},
-            {id: "[S.J.2]", title: "Predicting Chronic Kidney Disease using ML algorithms and XAI", venue: "Medicon Engineering Themes, 2023", doi: "10.55162/MCET.04.142"},
-            {id: "[S.J.1]", title: "Explainable Prediction of features contributing to Intrusion Detection using ML algorithms and LIME", venue: "Medicon Engineering Themes, 2023", doi: "10.55162/MCET.05.160"},
-            {id: "[S.C.5]", title: "Generating Sanskrit Captions for Images using Transformers and Long Short-Term Memory", venue: "ICICSET 2025", doi: "10.65091/icicset.v2i1.10"},
-            {id: "[S.C.4]", title: "Unveiling Key Predictors for Early Heart Attack Detection using Machine Learning and Explainable AI", venue: "NSysS 2023, ACM", doi: "10.1145/3629188.3629193"},
-            {id: "[S.C.3]", title: "Determining the Major Contributing Features to Predict Breast Cancer", venue: "ICECET 2023, IEEE", doi: "10.1109/ICECET58911.2023.10389217"},
-            {id: "[S.C.2]", title: "Deep Learning Based Brain Tumor Identification in MRI Images", venue: "ICET 2022", doi: ""},
-            {id: "[S.C.1]", title: "Counter Measuring the Adversarial Attack in Neural Network Using FGSM Model", venue: "ICET 2022", doi: ""}
-        ];
-
-        function renderPublications() {
-            let html = '';
-            publications.forEach(pub => {
-                html += `
-                    <div class="publication-card bg-white border border-gray-100 rounded-2xl p-6">
-                        <div class="flex justify-between items-start">
-                            <span class="font-mono text-blue-600 text-sm">${pub.id}</span>
-                            <span class="text-xs bg-gray-100 px-3 py-1 rounded-full">${pub.venue.split(',')[0]}</span>
-                        </div>
-                        <p class="mt-3 font-medium leading-tight">${pub.title}</p>
-                        ${pub.doi ? `<a href="https://doi.org/${pub.doi}" target="_blank" class="text-blue-600 hover:underline text-sm mt-4 inline-block">DOI →</a>` : ''}
-                    </div>
-                `;
-            });
-            document.getElementById('publications-list').innerHTML = html;
-        }
-
-        function toggleDropdown() {
-            const content = document.getElementById('publications-list');
-            const text = document.getElementById('toggle-text');
-            content.classList.toggle('open');
-            text.textContent = content.classList.contains('open') ? 'Hide All' : 'Show All';
-        }
-
-        // Initialize
-        renderPublications();
-    </script>
 </body>
 </html>
